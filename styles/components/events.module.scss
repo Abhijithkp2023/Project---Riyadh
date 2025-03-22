@@ -1,0 +1,12 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+
+
+.events_container {
+    height: 100vh;
+    max-height: 1000px;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0 auto;
+}

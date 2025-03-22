@@ -1,0 +1,202 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Adelle Sans, sans-serif;
+}
+
+@font-face {
+  font-family: Adelle Sans;
+  src: url("/fonts/AdelleSans-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Adelle Sans;
+  src: url("/fonts/AdelleSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Adelle Sans;
+  src: url("/fonts/AdelleSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Adelle Sans;
+  src: url("/fonts/AdelleSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 16px;
+}
+
+
+ul,
+ol {
+  list-style: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+
+:root {
+  --font-size-heading: 50px;
+  --font-weight-heading: 700;
+  --line-height-heading: 112.00000000000001%;
+
+  --font-size-para: 16px;
+  --font-weight-para: 400;
+  --line-height-para: 27px;
+}
+
+@media(max-width : 1600px) {
+  :root {
+    --font-size-heading: 48px;
+    --font-weight-heading: 700;
+    --line-height-heading: 100PX;
+  
+    --font-size-para: 16px;
+    --font-weight-para: 400;
+    --line-height-para: 27px;
+  }
+}
+
+
+.wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  // height: 100vh;
+  height: 100%;
+  background: cyan;
+}
+
+
+.light_button {
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 48px;
+  border: none;
+  border-radius: 30px;
+  padding: 0px 10px 0px 30px;
+  color: #574547;
+
+  p{
+    font-family: Adelle Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  div.button_round {
+    height: 38px;
+    width: 38px;
+    border-radius: 19px;
+    @include center;
+    background-color: $dark-color;
+
+    div {
+      height: 16px;
+      width: 10px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+
+
+.dark_button {
+  background: $dark-color;
+  display: flex;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 48px;
+  border: none;
+  border-radius: 30px;
+  padding: 0px 10px 0px 30px;
+  color: white;
+
+  p{
+    font-family: Adelle Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  div.button_round {
+    height: 38px;
+    width: 38px;
+    border-radius: 19px;
+    @include center;
+    background-color: #F5EDE633;
+
+    div {
+      height: 16px;
+      width: 10px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+
+.img_left {
+  position: absolute;
+  top: -30px;
+  width: 110px;
+  height: 1;
+  height: 902px;
+}
+
+.img_right {
+  position: absolute;
+  right: -50px;
+  top: -30px;
+  width: 110px;
+  height: 902px;
+}
+
+.aboutStyle.img_left,
+.aboutStyle.img_right {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
