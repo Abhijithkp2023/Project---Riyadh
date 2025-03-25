@@ -1,6 +1,11 @@
 import About from "@/components/About";
+import Details from "@/components/Details";
 import Events from "@/components/Events";
+import Facilities from "@/components/Facilities";
 import Hero from "@/components/Hero";
+import Learn from "@/components/Learn";
+import Media from "@/components/Media";
+import Review from "@/components/Review";
 import Head from "next/head";
 
 export default function Home() {
@@ -14,7 +19,12 @@ export default function Home() {
       <main className="main_conatiner">
         <Hero />
         <About />
+        <Facilities />
+        <Details />
+        <Learn />
         <Events />
+        <Media />
+        <Review />
       </main>
     </>
   );

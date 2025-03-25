@@ -1,0 +1,122 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+
+
+.container {
+    width: 100vw;
+    background: #F5EDE6;
+    min-height: 314px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .sub_conatiner {
+        width: 100%;
+        @include wrapper;
+        min-height: 199px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: space-between;
+        
+       
+
+        .footer_top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+             h4  {
+                font-size: 25px;
+                font-weight: 500;
+                line-height: 100%;
+            }
+
+
+            & > div p {
+                margin-top: 10px;
+                font-size: 17px;
+                font-weight: 350;
+                line-height: 100%;
+            }
+
+            form  .news_letter {
+                display: flex;
+                border-radius: 35px;
+                background-color: rgba($color: #FFFFFF, $alpha: .50);
+                border: 1px solid white;
+                border-radius: 35px;
+
+                p {
+                    margin: 0 40px;
+                    font-size: 16px;
+                    font-weight: 400px;
+                    line-height: 28px;
+                }
+                
+            }
+            
+            input {
+                width: 423px;
+                border: none;
+                outline: none;
+                background: none;
+                padding: 0 20px;
+                font-size: 13px;
+            }
+    
+
+
+
+
+        }
+
+        .decor_container {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .footer_bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .logo_container {
+                width: 201px;
+                height: 26px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            & > p {
+                font-size: 14px;
+                font-weight: 350px;
+                line-height: 24px;
+                color: #574648;
+            }
+
+            ul {
+                display: flex;
+                gap: 20px;
+
+                p {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 150%;
+                }
+
+            }
+    
+        }
+    }
+}

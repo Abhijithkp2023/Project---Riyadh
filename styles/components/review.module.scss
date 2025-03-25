@@ -1,0 +1,122 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+
+.container {
+padding-top: 80px;
+  height: 789px;
+  width: 100%;
+  background: white;
+  position: relative;
+
+  h2 {
+    padding-left: calc((100vw - 1600px) / 2);
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-heading);
+    line-height: var(--line-height-heading);
+  }
+
+  .slides {
+    margin-top: 50px;
+    background: #f5ede6;
+    padding: 30px 40px;
+    border-radius: 30px;
+    border: 1px solid #805e591a;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+
+
+    & > p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 26px;
+    }
+
+
+    .reviewer_info {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        h5 {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 40px;
+        }
+
+
+        span {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 40px;
+            color: #777777;
+        }
+    }
+
+  }
+
+.button_container {
+    position: absolute;
+    top: 100px;
+    right: 200px;
+    display: flex;
+    gap: 40px;
+
+    .swiper_button_right {
+        height: 46px;
+        width: 46px;
+        background: #805E59;
+        color: white;
+        cursor: pointer;
+        z-index: 99;
+        transform: rotate(45deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+
+        & > div {
+            height: 26px;
+            width: 16px;
+            // background: yellow;
+            transform: rotate(-45deg);
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .swiper_button_left {
+        height: 46px;
+        width: 46px;
+        background: #805E59;
+        color: white;
+        cursor: pointer;
+        z-index: 99;
+        transform: rotate(45deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+
+        & > div {
+            height: 26px;
+            width: 16px;
+            transform: rotate(135deg);
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: left;
+            }
+        }
+    }
+    
+}
+
+}
