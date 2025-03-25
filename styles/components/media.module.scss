@@ -1,5 +1,5 @@
-@import "../mixins.scss";
-@import "../variables.scss";
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
 
 .media_container {
   background: #f5ede6;
@@ -9,7 +9,7 @@
   align-items: center;
 
   .wrapper_container {
-    @include wrapper;
+    @include m.wrapper;
     width: 1600px;
     height: 788px;
     overflow: hidden;
@@ -39,8 +39,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        // border-top-left-radius: 15px;
-        // border-top-right-radius: 15px;
         border-radius: 15px;
         overflow: hidden;
         border: 1px solid white;
@@ -83,6 +81,10 @@
             height: 100%;
             width: 100%;
             object-fit: cover;
+          }
+
+          &:hover {
+            transform: scale(1.1);
           }
         }
       }

@@ -12,15 +12,15 @@ const Footer = () => {
           </div>
           <form action="">
             <div className={footerStyle.news_letter}>
-              <input type="email" placeholder="Email adres"/>
+              <input type="email" placeholder="Email adres" />
               <button className="dark_button">
-            <p>Subscribe</p>
-            <div className="button_round">
-              <div>
-                <img src="./arrow_small.svg" />
-              </div>
-            </div>
-          </button>
+                <p>Subscribe</p>
+                <div className="button_round">
+                  <div>
+                    <img src="./arrow_small.svg" />
+                  </div>
+                </div>
+              </button>
             </div>
           </form>
         </div>
@@ -39,17 +39,17 @@ const Footer = () => {
           </div>
 
           <ul>
-            <li>
+            <li className="underline_fill">
               <a href="">
                 <p>Privacy Policy</p>
               </a>
             </li>
-            <li>
+            <li className="underline_fill">
               <a href="">
                 <p>Terms of Service</p>
               </a>
             </li>
-            <li>
+            <li className="underline_fill">
               <a href="">
                 <p>Cookies Settings</p>
               </a>

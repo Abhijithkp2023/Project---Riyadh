@@ -1,19 +1,9 @@
 import React, { useEffect } from "react";
 import mediaStyle from "@/styles/components/media.module.scss";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const Media = () => {
-  useEffect(() => {
-    AOS.init(
-      {
-        duration: 1000,
-        once: false,
-      },
-      []
-    );
-  });
+
+
 
   return (
     <div className={mediaStyle.media_container}>
@@ -55,7 +45,7 @@ const Media = () => {
               <span>12 April, 2024</span>
               <button className="read_more_button">
                 <p>Read More</p>
-                <div>
+                
                   <svg
                     width="11"
                     height="17"
@@ -72,7 +62,7 @@ const Media = () => {
                       fill="currentColor"
                     />
                   </svg>
-                </div>
+               
               </button>
             </div>
 

@@ -1,19 +1,9 @@
 import React , {useEffect} from "react";
 import aboutStyle from "@/styles/components/about.module.scss";
 
-import arrow from "../public/arrow_small.svg";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const About = () => {
-
-   useEffect(() => {
-      AOS.init({
-        duration: 1000,
-        once: false,
-      });
-    }, []);
 
   return (
     <div className={aboutStyle.about_container}>

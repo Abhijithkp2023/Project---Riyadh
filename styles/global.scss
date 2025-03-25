@@ -1,5 +1,6 @@
-@import "./variables.scss";
-@import "./mixins.scss";
+@use "./variables.scss" as v;
+@use "./mixins.scss" as m;
+
 
 * {
   padding: 0;
@@ -84,13 +85,7 @@ a {
   }
 }
 
-// .wrapper {
-//   max-width: 1600px;
-//   margin: 0 auto;
-//   overflow-x: hidden;
-//   height: 100%;
-//   background: cyan;
-// }
+// -------------- light backgorund && dark text button ---------------
 
 .light_button {
   background: #ffffff;
@@ -119,8 +114,8 @@ a {
     height: 38px;
     width: 38px;
     border-radius: 19px;
-    @include center;
-    background-color: $dark-color;
+    @include m.center;
+    background-color: v.$dark-color;
     z-index: 2;
 
     div {
@@ -138,17 +133,15 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 0; 
+    width: 0;
     height: 100%;
-    background: darken($dark-color, 3%); 
-    transition: width 0.5s ease; 
-    z-index: 1; 
-
+    background: darken(v.$dark-color, 3%);
+    transition: width 0.5s ease;
+    z-index: 1;
   }
 
   &:hover::before {
-    width: 100%; 
-    // color: white;
+    width: 100%;
   }
 
   &:hover p {
@@ -156,9 +149,10 @@ a {
   }
 }
 
+// -------------------------- dark button - background dark color  && white text---------
 
 .dark_button {
-  background: $dark-color;
+  background: v.$dark-color;
   display: flex;
   align-items: center;
   display: flex;
@@ -185,7 +179,7 @@ a {
     height: 38px;
     width: 38px;
     border-radius: 19px;
-    @include center;
+    @include m.center;
     background-color: #f5ede633;
     z-index: 2;
 
@@ -204,19 +198,20 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 0; 
+    width: 0;
     height: 100%;
-    background: darken($dark-color, 3%); 
-    transition: width 0.5s ease; 
-    z-index: 1; 
+    background: darken(v.$dark-color, 3%);
+    transition: width 0.5s ease;
+    z-index: 1;
   }
 
   &:hover::before {
-    width: 100%; 
+    width: 100%;
     color: white;
   }
-  
 }
+
+// --------  button with white transparent backgorund ------------
 
 .transparent_button {
   background: rgba($color: #ffffff, $alpha: 0.2);
@@ -246,7 +241,7 @@ a {
     height: 38px;
     width: 38px;
     border-radius: 19px;
-    @include center;
+    @include m.center;
     background-color: rgba($color: #f5ede633, $alpha: 0.2);
     z-index: 1;
 
@@ -268,7 +263,7 @@ a {
     width: 0;
     height: 100%;
     background: rgba($color: #ffffff, $alpha: 0.3);
-    transition: width .5s ease;
+    transition: width 0.5s ease;
     z-index: 0;
   }
 
@@ -277,21 +272,29 @@ a {
   }
 }
 
-// @keyframes (
-
-// )
+// --------------- button with no white background for news --------
 
 .read_more_button {
   background: rgba($color: #ffffff, $alpha: 0);
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   display: flex;
-  gap: 10px;
+  gap: 8px;
   height: 24px;
   border: none;
   color: #574547;
   width: fit-content;
   cursor: pointer;
+  position: relative;
+  left: 0;
+  transition: all .3s ease;
+
+
+  &:hover {
+   transform: translateX(5px);
+  }
 
   p {
     font-family: Adelle Sans, sans-serif;
@@ -299,37 +302,26 @@ a {
     font-weight: 400;
   }
 
-  div {
-    height: 16px;
-    width: 10px;
+  svg {
+    color: #574547;
+    width: 11px;
+    height: 17px;
+    display: block;
+    align-self: center;
+    transition: all 0.3s ease;
+  }
 
+  &:hover {
+    // p {
+    //   transform: scale(1.1);
+    // }
     svg {
-      color: #574547;
+      transform: scale(1.1);
     }
   }
 }
 
-// <button className="read_more_button">
-//           <p>Read More</p>
-//           <div>
-//             <svg
-//               width="11"
-//               height="17"
-//               viewBox="0 0 11 17"
-//               fill="none"
-//               xmlns="http://www.w3.org/2000/svg"
-//             >
-//               <path
-//                 d="M10.3731 8.95553L9.41344 8.07654L1.57473 0.910156L0.650452 1.75385L8.46127 8.94713L0.680212 16.0614L1.61007 16.9102L9.41716 9.82444L9.41902 9.8278L10.3731 8.95553Z"
-//                 fill="currentColor"
-//               />
-//               <path
-//                 d="M6 8.91002L-9.66342e-08 14.1062L3.57628e-07 3.71387L6 8.91002Z"
-//                 fill="currentColor"
-//               />
-//             </svg>
-//           </div>
-//         </button>
+// -------------image decoration on sides---------------
 
 .img_left {
   position: absolute;
@@ -337,6 +329,7 @@ a {
   width: 110px;
   height: 902px;
   left: 0;
+  z-index: -1;
 }
 
 .img_right {
@@ -345,6 +338,7 @@ a {
   top: -30px;
   width: 55px;
   height: 902px;
+  z-index: -1;
 }
 
 .aboutStyle.img_left,
@@ -352,4 +346,23 @@ a {
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+// ---------- undeline decoration -------------
+
+.underline_fill {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s ease;
+  padding-bottom: 2px;
+
+  &:hover {
+    background-size: 100% 1px;
+  }
 }

@@ -1,19 +1,8 @@
 import React, {useEffect} from "react";
 import facilitiesStyle from "@/styles/components/facilities.module.scss";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const Facilities = () => {
 
-
-   useEffect(() => {
-      AOS.init({
-        duration: 1000,
-        once: false,
-      });
-    }, []);
-  
 
   return (
     <div className={facilitiesStyle.container} data-aos="fade-up">

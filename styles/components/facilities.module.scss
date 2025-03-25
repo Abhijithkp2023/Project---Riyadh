@@ -1,5 +1,5 @@
-@import "../mixins.scss";
-@import "../variables.scss";
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
 
 .container {
   position: relative;

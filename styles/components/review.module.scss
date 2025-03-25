@@ -1,5 +1,5 @@
-@import "../mixins.scss";
-@import "../variables.scss";
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
 
 .container {
 padding-top: 80px;
@@ -13,7 +13,7 @@ padding-top: 80px;
     font-size: var(--font-size-heading);
     font-weight: var(--font-weight-heading);
     line-height: var(--line-height-heading);
-  }
+  } 
 
   .slides {
     margin-top: 50px;
@@ -24,8 +24,6 @@ padding-top: 80px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-
-
 
     & > p {
         font-size: 18px;
@@ -79,7 +77,6 @@ padding-top: 80px;
         & > div {
             height: 26px;
             width: 16px;
-            // background: yellow;
             transform: rotate(-45deg);
 
             img {

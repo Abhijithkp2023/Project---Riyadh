@@ -1,5 +1,5 @@
-@import "../variables.scss";
-@import "../mixins.scss";
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
 
 .about_container {
   height: 100vh;
@@ -10,7 +10,7 @@
   position: relative;
 
   .about_sub_container {
-    @include center;
+    @include m.center;
     flex-direction: column;
     width: 100%;
     max-width: 1600px;
@@ -37,3 +37,7 @@
     }
   }
 }
+
+
+
+

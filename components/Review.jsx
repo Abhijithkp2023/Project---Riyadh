@@ -102,7 +102,7 @@ const Review = () => {
         speed={1000}
       >
         {reviews.map((review, i) => (
-          <SwiperSlide key={i} className={reviewStyle.slides}>
+          <SwiperSlide key={i} className={reviewStyle.slides} >
             <div className={reviewStyle.quote_container}>
               <img src={"./quote.svg"} alt="" />
             </div>

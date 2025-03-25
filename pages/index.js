@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <main className="main_conatiner">
         <Hero />
-        <About />
+        <About /> 
         <Facilities />
         <Details />
         <Learn />

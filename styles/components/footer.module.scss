@@ -1,5 +1,5 @@
-@import "../mixins.scss";
-@import "../variables.scss";
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
 
 
 .container {
@@ -12,7 +12,7 @@
 
     .sub_conatiner {
         width: 100%;
-        @include wrapper;
+        @include m.wrapper;
         min-height: 199px;
         display: flex;
         flex-direction: column;

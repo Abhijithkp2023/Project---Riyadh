@@ -1,17 +1,9 @@
 import React, { useEffect } from "react";
 import detailsStyle from "@/styles/components/details.module.scss";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Details = () => {
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
-    });
-  }, []);
 
   return (
     <div className={detailsStyle.container}>
@@ -38,7 +30,7 @@ const Details = () => {
 
           <ul className={detailsStyle.details_bottom}>
             <li>
-              <button className="dark_button">
+              <button className="dark_button" data-aos="fade-up">
                 <p>Take a Course Tour</p>
                 <div className="button_round">
                   <div>
@@ -60,7 +52,7 @@ const Details = () => {
             </li>
 
             <li>
-              <button className="transparent_button">
+              <button className="transparent_button" data-aos="fade-up">
                 <p>View Details</p>
                 <div className="button_round">
                   <div>

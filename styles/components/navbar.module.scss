@@ -1,6 +1,94 @@
-@import "../mixins.scss";
-@import "../variables.scss";
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
 
+.navbar_container {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-top: 0px;
+  transform: translate(-50%);
+  z-index: 99;
+  display: flex;
+  width: 100%;
 
+  height: 50px;
+  will-change: transform, position;
 
+  & > div {
+    width: 100%;
+    max-width: calc(1600px + 6%);
+    padding: 0 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
 
+  &.fixed {
+    top: 0;
+    padding-top: 10px;
+    position: fixed;
+    transform: translateX(-50%);
+    animation: smoothFixed 0.5s ease-out;
+    background: #805e59;
+    height: max-content;
+    padding-bottom: 20px;
+  }
+
+  @keyframes smoothFixed {
+    0% {
+      transform: translate(-50%, -10px);
+    }
+    100% {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 30px;
+    color: white;
+  }
+
+  .book_now_btn {
+    background: rgba($color: #000000, $alpha: 0);
+    border: none;
+    cursor: pointer;
+    height: 50px;
+    padding: 0 40px;
+    border-radius: 30px;
+    border: 1px solid white;
+    position: relative;
+    overflow: hidden;
+
+    span {
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 28px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: rgba($color: #ffffff, $alpha: 0.3);
+      transition: width 0.5s ease;
+      z-index: 1;
+    }
+
+    &:hover::before {
+      width: 100%;
+      color: #805e59;
+    }
+  }
+
+  .end_list {
+    display: flex;
+    align-items: center;
+  }
+ 
+}

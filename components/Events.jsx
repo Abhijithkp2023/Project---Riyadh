@@ -1,19 +1,34 @@
-import React, {useEffect  } from "react";
+import React, { useEffect, useState } from "react";
+import ReactCardFlip from "react-card-flip";
 import eventsStyle from "@/styles/components/events.module.scss";
 
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const Events = () => {
+  const [flippedIndices, setFlippedIndices] = useState([false, false, false]);
+  const images = [
+    { front: "./event_img_1.png", back: "./event_img_3.png" },
+    { front: "./event_img_2.png", back: "./event_img_1.png" },
+    { front: "./event_img_3.png", back: "./event_img_2.png" },
+  ];
 
-   useEffect (() => {
-      AOS.init ({
-        duration: 1000,
-        once: false
-      }, [])
-    })
-  
+  useEffect(() => {
+    const intervals = [
+      setInterval(() => toggleFlip(0), 3000),
+      setInterval(() => toggleFlip(1), 5000),
+      setInterval(() => toggleFlip(2), 7000),
+    ];
+
+    return () => intervals.forEach(clearInterval);
+  }, []);
+
+  const toggleFlip = (index) => {
+    setFlippedIndices((prev) => {
+      const newState = [...prev];
+      newState[index] = !newState[index];
+      return newState;
+    });
+  };
+
 
   return (
     <div className={eventsStyle.events_container}>
@@ -36,15 +51,23 @@ const Events = () => {
           </button>
         </div>
         <div className={eventsStyle.event_img_container}>
-          <div data-aos="fade-up">
-            <img src="./event_img_1.png" alt="" />
-          </div>
-          <div data-aos="fade-up">
-            <img src="./event_img_2.png" alt="" />
-          </div>
-          <div data-aos="fade-up">
-            <img src="./event_img_3.png" alt="" />
-          </div>
+          {images.map((img, index) => (
+            <ReactCardFlip
+              key={index}
+              isFlipped={flippedIndices[index]}
+              flipDirection="horizontal"
+              containerClassName={eventsStyle.flip_container}
+              flipSpeedBackToFront={2}
+              flipSpeedFrontToBack={2}
+            >
+              <div className={eventsStyle.flip_card}>
+                <img src={img.front} alt="" />
+              </div>
+              <div className={eventsStyle.flip_card}>
+                <img src={img.back} alt="" />
+              </div>
+            </ReactCardFlip>
+          ))}
         </div>
       </div>
 

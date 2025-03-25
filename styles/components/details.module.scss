@@ -1,8 +1,11 @@
-@import "../mixins.scss";
-@import "../variables.scss";
+@use "../mixins.scss" as m;
+@use "../variables.scss" as v;
 
 .container {
   background: url("/details_main_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 900px;
   width: 100vw;
   display: flex;
