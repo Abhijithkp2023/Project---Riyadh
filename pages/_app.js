@@ -2,8 +2,8 @@ import Layout from "@/components/Layout";
 // import style from "@/styles/global.module.scss"
 import "@/styles/global.scss";
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
-// import "@/styles/base.scss"
+import { use, useEffect } from 'react';
+import "@/styles/_base.scss";
 
 
 export default function App({ Component, pageProps }) {

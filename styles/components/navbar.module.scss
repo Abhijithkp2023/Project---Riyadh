@@ -1,5 +1,5 @@
-@use "../mixins.scss" as m;
-@use "../variables.scss" as v;
+@import "../_mixins.scss";
+@import "../_variables.scss";
 
 .navbar_container {
   position: absolute;
@@ -10,6 +10,15 @@
   z-index: 99;
   display: flex;
   width: 100%;
+  transition: all 0.5s ease;
+
+  @media #{$media-1600} {
+    top: 30px;
+  }
+
+  @media #{$media-768} {
+    top: 10px;
+  }
 
   height: 50px;
   will-change: transform, position;
@@ -32,7 +41,7 @@
     animation: smoothFixed 0.5s ease-out;
     background: #805e59;
     height: max-content;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 
   @keyframes smoothFixed {
@@ -44,10 +53,47 @@
     }
   }
 
-  ul {
+  .logo_container {
+    height: 43.99px;
+    width: auto;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @media #{$media-1300} {
+      height: 38px;
+    }
+
+    @media #{$media-500} {
+      height: 33px;
+    }
+  }
+
+  .links_container {
     display: flex;
     gap: 30px;
     color: white;
+
+    li {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 29px;
+    }
+
+    @media #{$media-1400} {
+      gap: 25px;
+
+      li {
+        font-size: 15px;
+      }
+    }
+
+    @media #{$media-1300} {
+      display: none;
+    }
   }
 
   .book_now_btn {
@@ -84,11 +130,124 @@
       width: 100%;
       color: #805e59;
     }
+
+    @media #{$media-1400} {
+      height: 40px;
+      padding: 0 20px;
+
+      span {
+        font-size: 14px;
+      }
+    }
+
+    @media #{$media-480} {
+      height: 40px;
+      padding: 0 15px;
+
+      span {
+        font-size: 12px;
+      }
+    }
   }
 
   .end_list {
     display: flex;
     align-items: center;
+    gap: 25px;
+    justify-content: center;
+    color: white;
+
+    @media #{$media-768} {
+      gap: 25px;
+
+      a {
+        font-size: 15px;
+      }
+    }
+
+    @media #{$media-500} {
+      gap: 10px;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    a {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 29px;
+    }
+
+    @media #{$media-1300} {
+      gap: 15px;
+
+      .hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
- 
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  background: rgba($color: $dark-color, $alpha: 0.96);
+  backdrop-filter: blur(4px);
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  ul {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    padding: 100px 20px 40px;
+    gap: 2rem;
+
+    li {
+      width: 100%;
+      max-width: 300px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateX(5px);
+      }
+
+      a {
+        color: white;
+        font-size: max(1.25rem, 20px);
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .close_icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
 }

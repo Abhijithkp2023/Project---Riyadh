@@ -1,34 +1,19 @@
-import React, { useEffect, useState } from "react";
-import ReactCardFlip from "react-card-flip";
+import React, { useEffect, useRef } from "react";
 import eventsStyle from "@/styles/components/events.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFlip, Autoplay } from "swiper/modules";
 
+import "swiper/css";
+import "swiper/css/effect-flip";
+import "swiper/css/autoplay";
 
 const Events = () => {
-  const [flippedIndices, setFlippedIndices] = useState([false, false, false]);
-  const images = [
-    { front: "./event_img_1.png", back: "./event_img_3.png" },
-    { front: "./event_img_2.png", back: "./event_img_1.png" },
-    { front: "./event_img_3.png", back: "./event_img_2.png" },
-  ];
+  const swiperRefs = useRef([]);
 
+  // Initialize swiper refs
   useEffect(() => {
-    const intervals = [
-      setInterval(() => toggleFlip(0), 3000),
-      setInterval(() => toggleFlip(1), 5000),
-      setInterval(() => toggleFlip(2), 7000),
-    ];
-
-    return () => intervals.forEach(clearInterval);
+    swiperRefs.current = swiperRefs.current.slice(0, 3);
   }, []);
-
-  const toggleFlip = (index) => {
-    setFlippedIndices((prev) => {
-      const newState = [...prev];
-      newState[index] = !newState[index];
-      return newState;
-    });
-  };
-
 
   return (
     <div className={eventsStyle.events_container}>
@@ -51,23 +36,71 @@ const Events = () => {
           </button>
         </div>
         <div className={eventsStyle.event_img_container}>
-          {images.map((img, index) => (
-            <ReactCardFlip
-              key={index}
-              isFlipped={flippedIndices[index]}
-              flipDirection="horizontal"
-              containerClassName={eventsStyle.flip_container}
-              flipSpeedBackToFront={2}
-              flipSpeedFrontToBack={2}
-            >
-              <div className={eventsStyle.flip_card}>
-                <img src={img.front} alt="" />
-              </div>
-              <div className={eventsStyle.flip_card}>
-                <img src={img.back} alt="" />
-              </div>
-            </ReactCardFlip>
-          ))}
+         
+          <Swiper
+            effect={"flip"}
+            grabCursor={true}
+            modules={[EffectFlip, Autoplay]}
+            className={`${eventsStyle.swiper_3d} mySwiper`}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            speed={1000}
+            loop={true}
+            onSwiper={(swiper) => (swiperRefs.current[0] = swiper)}
+          >
+            <SwiperSlide className={eventsStyle.slider}>
+              <img src="./event_img_1.png" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="./event_img_2.png" alt="" />
+            </SwiperSlide>
+          </Swiper>
+
+          
+          <Swiper
+            effect={"flip"}
+            grabCursor={true}
+            modules={[EffectFlip, Autoplay]}
+            className={`${eventsStyle.swiper_3d} mySwiper`}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            speed={1200}
+            loop={true}
+            onSwiper={(swiper) => (swiperRefs.current[1] = swiper)}
+          >
+            <SwiperSlide>
+              <img src="./event_img_2.png" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="./event_img_3.png" alt="" />
+            </SwiperSlide>
+          </Swiper>
+
+         
+          <Swiper
+            effect={"flip"}
+            grabCursor={true}
+            modules={[EffectFlip, Autoplay]}
+            className={`${eventsStyle.swiper_3d} mySwiper`}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            speed={1400}
+            loop={true}
+            onSwiper={(swiper) => (swiperRefs.current[2] = swiper)}
+          >
+            <SwiperSlide>
+              <img src="./event_img_3.png" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="./event_img_2.png" alt="" />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
 

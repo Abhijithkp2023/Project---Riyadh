@@ -58,8 +58,6 @@ const Hero = () => {
       bullets.forEach((bullet, index) => {
         bullet.addEventListener('click', () => handlePaginationClick(index));
       });
-      
-      // Cleanup
       return () => {
         bullets.forEach((bullet, index) => {
           bullet.removeEventListener('click', () => handlePaginationClick(index));
@@ -143,7 +141,7 @@ const Hero = () => {
 
       <button
         className={heroStyle.swiper_button_right}
-        onClick={() => swiperRef.current?.slidePrev()}
+        onClick={() => swiperRef.current?.slideNext()}
       >
         <div className="">
           <img src="./arrow_big.svg" />
@@ -151,7 +149,8 @@ const Hero = () => {
       </button>
       <button
         className={heroStyle.swiper_button_left}
-        onClick={() => swiperRef.current?.slideNext()}
+        onClick={() => swiperRef.current?.slidePrev()}
+       
       >
         <div className="">
           <img src="./arrow_big.svg" />

@@ -4,6 +4,9 @@
 // -----------
 // ------------- BASIC STYLES -----------------
 
+@import "./variables.scss";
+@import "./mixins";
+
 
 .trans, .buttion {
   transition: all .4s ease-out 0s;
@@ -999,7 +1002,7 @@
 .pb_180 {
   padding-bottom: 180px;
 
-  @media #{$media-600} {
+  @media #{$media-820} {
     padding-bottom: 90px;
   }
 }

@@ -1,13 +1,13 @@
-@use "../mixins.scss" as m;
-@use "../variables.scss" as v;
+@import "../_mixins.scss";
+@import "../_variables.scss";
 
 .container {
   position: relative;
   display: flex;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: yellow;
 
   .swiper {
     width: 100%;
@@ -39,22 +39,24 @@
 
   .text_container {
     position: absolute;
-    top: 70%;
     left: 50%;
+    bottom: 150px;
+    top: 70%;
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
     z-index: 10;
     padding: 20px 30px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    padding-bottom: 150px;
     justify-content: center;
-    align-items: center;
-    text-align: center;
     gap: 20px;
+    width: 100%;
+    max-width: 1052px;
 
     h1 {
-      font-size: 65px;
+      font-size: 4.0625rem;
       font-weight: 700;
       line-height: 121%;
       margin: 0;
@@ -88,7 +90,7 @@
     transform: translateY(-50%);
     width: 67px;
     height: 67px;
-    background: rgba($color: #ffffff, $alpha: .2);
+    background: rgba($color: #ffffff, $alpha: 0.2);
     backdrop-filter: blur(11.7px);
     border: none;
     transform: rotate(45deg);
@@ -99,8 +101,6 @@
     z-index: 10;
     transition: all 0.3s ease;
 
-   
-
     img {
       height: 37px;
       width: 25px;
@@ -109,6 +109,7 @@
 
   .swiper_button_right {
     right: 104px;
+
     img {
       transform: rotate(135deg);
     }
@@ -126,10 +127,10 @@
     }
     &:hover {
       background: rgba(255, 255, 255, 0.4);
-      padding: 10px 10px 0px 0px ;
+      padding: 10px 10px 0px 0px;
     }
   }
-  
+
   .custom_pagination {
     position: absolute;
     bottom: 30px;
@@ -140,55 +141,84 @@
     gap: 50px;
     justify-content: center;
     align-items: center;
-  
+
     .bullet {
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: rgba($color: #F5EDE6, $alpha: .30);
+      background: rgba($color: #f5ede6, $alpha: 0.3);
       border: none;
       cursor: pointer;
       padding: 0;
       transition: all 0.3s ease;
-      
+
       &.active {
         height: 27px;
         width: 27px;
         border-radius: 0%;
         transform: rotate(45deg);
-        background: #F5EDE6;
+        background: #f5ede6;
       }
-      
+
       &:focus {
         outline: none;
       }
     }
   }
-
 }
 
+// @media #{$media-1600} {
+//   .container {
+//     .text_container {
+//       width: 70%;
+//     }
+//   }
+// }
 
+@media #{$media-1200} {
+  .container {
+    .swiper_button_right,
+    .swiper_button_left {
+      width: 47px;
+      height: 47px;
 
+      img {
+        height: 25.9px;
+        width: 17.5px;
+      }
+    }
 
+    .swiper_button_right {
+      right: 5% !important;
+    }
+    .swiper_button_left {
+      left: 5% !important;
+    }
+  }
 
+  .custom_pagination {
+    gap: 30px !important;
 
+    .bullet {
+      width: 10px !important;
+      height: 10px !important;
 
+      &.active {
+        height: 20px !important;
+        width: 20px !important;
+      }
 
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media #{$media-820} {
+  .container {
+    .text_container {
+      padding: 20px 10px;
+    }
+  }
+}

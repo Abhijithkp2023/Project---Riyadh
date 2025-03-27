@@ -1,11 +1,13 @@
-@use "../mixins.scss" as m;
-@use "../variables.scss" as v;
+@import "../_mixins.scss";
+@import "../_variables.scss";
 
 .container {
   position: relative;
   width: 100vw;
+  min-height: 10px;
+ 
 
-  ul {
+  .facilities_grid {
     margin: 0;
     padding: 0;
     display: flex;
@@ -39,10 +41,10 @@
         transition: all 0.5s ease;
       }
 
-      p {
+      h4 {
         position: absolute;
         color: white;
-        font-size: 22px;
+        font-size: 1.5rem;
         font-weight: 500;
         line-height: 28px;
         left: 50%;
@@ -51,5 +53,18 @@
         white-space: nowrap;
       }
     }
+    @media #{$media-768} {
+      display: none;
+    }
   }
+
+  .facilities_slide {
+    display: none;
+
+    @media #{$media-768}{
+      display: flex;
+    }
+  }
+
+  
 }
