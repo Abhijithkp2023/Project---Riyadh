@@ -175,11 +175,31 @@
       display: none;
     }
 
-    a {
+    a span,
+    button span {
+      font-family: inherit;
       font-size: 16px;
       font-weight: 500;
       line-height: 29px;
+
+      @media #{$media-1024} {
+        font-size: 14px;
+      }
+
     }
+
+    // button a {
+    //   font-size: 16px;
+    //   font-weight: 500;
+    //   line-height: 29px;
+    //   color: white;
+
+    //   @media #{$media-1024} {
+    //     font-size: 14px;
+    //   }
+
+
+    // }
 
     @media #{$media-1300} {
       gap: 15px;

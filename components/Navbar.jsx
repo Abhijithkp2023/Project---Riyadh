@@ -48,9 +48,8 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`${navStyle.navbar_container} ${
-          scrolled ? navStyle.fixed : ""
-        }`}
+        className={`${navStyle.navbar_container} ${scrolled ? navStyle.fixed : ""
+          }`}
       >
         <div>
           <div className={navStyle.logo_container}>
@@ -74,7 +73,7 @@ const Navbar = () => {
             </li>
             <li className="underline_fill" onClick={changeLanguage}>
               <a>
-                {locale === "en" ? "عربي" : "English"}
+                <span> {locale === "en" ? "عربي" : "English"}</span>
               </a>
             </li>
             <li className={navStyle.hamburger}>
@@ -85,9 +84,8 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`${navStyle.sidebar} ${
-          sidebarActive ? navStyle.active : ""
-        }`}
+        className={`${navStyle.sidebar} ${sidebarActive ? navStyle.active : ""
+          }`}
       >
         <ul>
           <li className="underline_fill">
