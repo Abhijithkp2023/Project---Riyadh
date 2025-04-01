@@ -16,7 +16,7 @@ const Navbar = () => {
 
   // to set language eng initially and when refreshes detect language and setting direction
   useEffect(() => {
-    const savedLang = localStorage.getItem("language") || "en";
+    const savedLang = "en";
     i18n.changeLanguage(savedLang);
     document.documentElement.dir = savedLang === "ar" ? "rtl" : "ltr";
     setIsMounted(true);
