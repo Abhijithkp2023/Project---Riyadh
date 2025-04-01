@@ -168,21 +168,13 @@
   }
 }
 
-// @media #{$media-1600} {
-//   .container {
-//     .text_container {
-//       width: 70%;
-//     }
-//   }
-// }
-
 @media #{$media-1200} {
   .container {
 
     .swiper_button_right,
     .swiper_button_left {
-      width: 47px;
-      height: 47px;
+      width: 40px;
+      height: 40px;
 
       img {
         height: 25.9px;

@@ -32,8 +32,7 @@ const Details = () => {
             <li>
               <button className="dark_button" data-aos="fade-up">
                 <p>{t("details.btn_text_course_tour")}</p>
-                <div className="button_round">
-                  <div>
+                <div className="button_round">  
                     <svg
                       width="11"
                       height="16"
@@ -46,7 +45,6 @@ const Details = () => {
                         fill="#F5EDE6"
                       />
                     </svg>
-                  </div>
                 </div>
               </button>
             </li>
@@ -55,10 +53,9 @@ const Details = () => {
               <button className="transparent_button" data-aos="fade-up">
                 <p>{t("details.btn_text_view_details")}</p>
                 <div className="button_round">
-                  <div>
+                  
                     <svg
-                      width="11"
-                      height="16"
+                     
                       viewBox="0 0 11 16"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +66,7 @@ const Details = () => {
                       />
                     </svg>
                   </div>
-                </div>
+              
               </button>
             </li>
           </ul>

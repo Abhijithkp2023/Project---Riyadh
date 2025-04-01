@@ -62,6 +62,9 @@ html {
 }
 
 
+
+
+
 /* Force inheritance for all interactive elements */
 button,
 input,
@@ -148,7 +151,7 @@ a {
   height: 48px;
   border: none;
   border-radius: 30px;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 12px 0px 12px;
   color: $dark_color;
   width: fit-content;
   cursor: pointer;
@@ -168,15 +171,25 @@ a {
     @include center;
     background-color: $dark-color;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    div {
-      height: 16px;
-      width: 10px;
+    // div {
+    //   height: 16px;
+    //   width: 10px;
+    //   background-color: yellow;
 
       svg {
-        color: white;
-        
-      }
+          color: white;
+          height: 55%;
+            width: auto;
+      
+          [dir="rtl"] {
+            transform: rotate(180deg);
+            background: yellow;
+          }
+        // }
     }
   }
 
@@ -226,12 +239,13 @@ a {
   height: 48px;
   border: none;
   border-radius: 30px;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 12px 0px 12px;
   color: white;
   width: fit-content;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  
 
   p {
     font-size: 16px;
@@ -247,20 +261,23 @@ a {
     @include center;
     background-color: #f5ede633;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    div {
-      height: 16px;
-      width: 10px;
+    // div {
+    //   height: 16px;
+    //   width: 10px;
 
       svg {
-        color: white;
-
+        color: white; 
+        height: 55%;
+        width: auto;
         [dir="rtl"] {
           transform: rotate(180deg);
-          background: yellow;
         }
       }
-    }
+    // }
   }
 
     
@@ -335,14 +352,17 @@ a {
     background-color: rgba($color: #f5ede633, $alpha: 0.2);
     z-index: 1;
 
-    div {
-      height: 16px;
-      width: 10px;
+    
 
       svg {
-        color: white;
+        color: white; 
+        height: 55%;
+        width: auto;
+        [dir="rtl"] {
+          transform: rotate(180deg);
+        }
       }
-    }
+    
   }
 
   &::before {

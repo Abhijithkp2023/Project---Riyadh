@@ -17,7 +17,6 @@ const Learn = () => {
             <button data-aos="fade-up" className={`${LearnStyle.button_top} dark_button`}>
               <p>{t("learn.read_more_btn")}</p>
               <div className="button_round">
-                <div>
                   <svg
                 width="11"
                 height="17"
@@ -34,7 +33,6 @@ const Learn = () => {
                   fill="currentColor"
                 />
               </svg>
-                </div>
               </div>
             </button>
           </div>

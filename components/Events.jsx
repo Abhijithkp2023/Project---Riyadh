@@ -25,8 +25,7 @@ const Events = () => {
           <button className="dark_button" data-aos="fade-up">
             <p>{t("event.read_more_btn")}</p>
             <div className="button_round">
-              <div>
-                <svg
+              <svg
                 width="11"
                 height="17"
                 viewBox="0 0 11 17"
@@ -42,7 +41,6 @@ const Events = () => {
                   fill="currentColor"
                 />
               </svg>
-              </div>
             </div>
           </button>
         </div>
