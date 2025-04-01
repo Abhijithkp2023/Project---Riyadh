@@ -61,6 +61,17 @@ html {
   overflow-x: hidden;
 }
 
+
+/* Force inheritance for all interactive elements */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
 body {
   overflow-x: hidden;
 
@@ -145,7 +156,6 @@ a {
   overflow: hidden;
 
   p {
-    font-family: Adelle Sans, sans-serif;
     font-size: 16px;
     font-weight: 400;
     z-index: 2;
@@ -224,7 +234,6 @@ a {
   overflow: hidden;
 
   p {
-    font-family: Adelle Sans, sans-serif;
     font-size: 16px;
     font-weight: 400;
     z-index: 2;
@@ -313,7 +322,6 @@ a {
   overflow: hidden;
 
   p {
-    font-family: Adelle Sans, sans-serif;
     font-size: 16px;
     font-weight: 400;
     z-index: 1;
@@ -394,7 +402,6 @@ a {
   }
 
   p {
-    font-family: Adelle Sans, sans-serif;
     font-size: 15px;
     font-weight: 400;
   }
