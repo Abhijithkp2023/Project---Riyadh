@@ -1,67 +1,71 @@
 import React, {useEffect} from "react";
 import LearnStyle from "@/styles/components/learn.module.scss";
-
+import { useTranslation } from "react-i18next";
 
 const Learn = () => {
-
+  const { i18n, t } = useTranslation("common");
 
   return (
-    <div className={LearnStyle.learn_container}>
+    <div className={`${LearnStyle.learn_container}`}>
       <div>
-        <div className={LearnStyle.sub_container}>
+        <div className={`${LearnStyle.sub_container}`}>
 
-          <div className={LearnStyle.learn_top}>
+          <div className={`${LearnStyle.learn_top} mt_130`}>
             <h2 data-aos="fade-up">
-              Learn to Play Golf <br /> At Riyadh Golf Club
+              {t("learn.main_heading")}
             </h2>
-            <button className="dark_button" data-aos="fade-up">
-              <p>Read More</p>
+            <button data-aos="fade-up" className={`${LearnStyle.button_top} dark_button`}>
+              <p>{t("learn.read_more_btn")}</p>
               <div className="button_round">
                 <div>
-                  <img src="./arrow_small.svg" />
+                  <img src="./arrow_small.svg" alt="arrow" />
                 </div>
               </div>
             </button>
           </div>
 
-          <div className={LearnStyle.learn_bottom}>
+          <div className={`${LearnStyle.learn_bottom}`}>
             <div data-aos="fade-up" className={LearnStyle.junior}>
-              <h3 data-aos="fade-up">Golf for Juniors</h3>
+              <h3 data-aos="fade-up">{t("learn.junior_heading")}</h3>
               <p data-aos="fade-up">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit nulla
-                pretium ultrices consectetur. Duis condimentum augue non turpis
-                laoreet, dapibus ornare.
-              </p>
-
-              <div>
-                <img src="./junior.png" alt="" />
-              </div>
-            </div>
-            <div data-aos="fade-up"  className={LearnStyle.ladies}>
-              <h3 data-aos="fade-up">Golf for Ladies</h3>
-              <p data-aos="fade-up">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit nulla
-                pretium ultrices consectetur. Duis condimentum augue non turpis
-                laoreet, dapibus ornare.
+                {t("learn.junior_para")}
               </p>
               <div>
-                <img src="./ladies.png" alt="" />
+                <img src="./junior.png" alt={t("learn.junior_heading")} />
               </div>
             </div>
-            <div data-aos="fade-up"  className={LearnStyle.men}>
-              <h3 data-aos="fade-up">Golf for Men</h3>
+            
+            <div data-aos="fade-up" className={LearnStyle.ladies}>
+              <h3 data-aos="fade-up">{t("learn.ladies_heading")}</h3>
               <p data-aos="fade-up">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit nulla
-                pretium ultrices consectetur. Duis condimentum augue non turpis
-                laoreet, dapibus ornare.
+                {t("learn.ladies_para")}
+              </p>
+              <div>
+                <img src="./ladies.png" alt={t("learn.ladies_heading")} />
+              </div>
+            </div>
+            
+            <div data-aos="fade-up" className={LearnStyle.men}>
+              <h3 data-aos="fade-up">{t("learn.men_heading")}</h3>
+              <p data-aos="fade-up">
+                {t("learn.men_para")}
               </p>
               <div>
                 <div>
-                  <img src="./men.png" alt="" />
+                  <img src="./men.png" alt={t("learn.men_heading")} />
                 </div>
               </div>
             </div>
           </div>
+
+          <button data-aos="fade-up" className={`${LearnStyle.button_bottom} dark_button mb_130`}>
+            <p>{t("learn.read_more_btn")}</p>
+            <div className="button_round">
+              <div>
+                <img src="./arrow_small.svg" alt="arrow" />
+              </div>
+            </div>
+          </button>
         </div>
       </div>
     </div>

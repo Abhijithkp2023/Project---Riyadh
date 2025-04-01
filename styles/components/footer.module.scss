@@ -1,122 +1,197 @@
-@use "../mixins.scss" as m;
-@use "../variables.scss" as v;
-
+@import "../mixins.scss";
+@import "../variables.scss";
 
 .container {
-    width: 100vw;
-    background: #F5EDE6;
-    min-height: 314px;
+  width: 100vw;
+  background: #f5ede6;
+  padding: 40px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media #{$media-820} {
+    padding: 30px 0px;
+  }
+
+  .sub_conatiner {
+    width: 100%;
+    @include wrapper;
+    min-height: 199px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: space-between;
+    gap: 30px;
 
-    .sub_conatiner {
-        width: 100%;
-        @include m.wrapper;
-        min-height: 199px;
+    .footer_top {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+
+      h4 {
+        font-size: 1.5625rem;
+        font-weight: 500;
+        line-height: 100%;
+      }
+
+      & > div p {
+        margin-top: 10px;
+        font-size: 17px;
+        font-weight: 350;
+        line-height: 100%;
+
+        @media #{$media-1200} {
+          font-size: 15px;
+          line-height: 25px;
+        }
+
+        @media #{$media-1200} {
+          font-size: 14px;
+          line-height: 23px;
+        }
+      }
+
+      form .news_letter {
         display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        justify-content: space-between;
-        
-       
+        border-radius: 35px;
+        background-color: rgba($color: #ffffff, $alpha: 0.5);
+        border: 1px solid white;
+        border-radius: 35px;
+        // width: 100%;
 
-        .footer_top {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
+        button p {
+          margin: 0 40px;
+          font-size: 16px;
+          font-weight: 400px;
+          line-height: 28px;
 
-             h4  {
-                font-size: 25px;
-                font-weight: 500;
-                line-height: 100%;
+          @media #{$media-1200} {
+            margin: 0 20px;
+            font-size: 15px;
+            line-height: 25px;
+          }
+
+          @media #{$media-1200} {
+            font-size: 14px;
+            line-height: 23px;
+          }
+        }
+
+        @media #{$media-1200} {
+          button {
+            height: 40px;
+            justify-content: center;
+
+            div {
+              height: 25px;
+              width: 25px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
+          }
+        }
 
-
-            & > div p {
-                margin-top: 10px;
-                font-size: 17px;
-                font-weight: 350;
-                line-height: 100%;
-            }
-
-            form  .news_letter {
+        @media #{$media-400} {
+            button {
+              height: 35px;
+              justify-content: center;
+  
+              div {
+                height: 25px;
+                width: 25px;
                 display: flex;
-                border-radius: 35px;
-                background-color: rgba($color: #FFFFFF, $alpha: .50);
-                border: 1px solid white;
-                border-radius: 35px;
-
-                p {
-                    margin: 0 40px;
-                    font-size: 16px;
-                    font-weight: 400px;
-                    line-height: 28px;
-                }
-                
+                justify-content: center;
+                align-items: center;
+              }
             }
-            
-            input {
-                width: 423px;
-                border: none;
-                outline: none;
-                background: none;
-                padding: 0 20px;
-                font-size: 13px;
-            }
-    
+          }
+      }
 
+      input {
+        width: 423px;
+        border: none;
+        outline: none;
+        background: none;
+        padding: 0 20px;
+        font-size: 13px;
 
-
-
+        @media #{$media-1024} {
+          width: calc(100vw - 210px);
+          margin: 0 auto;
         }
 
-        .decor_container {
-            position: relative;
-            overflow: hidden;
+        //   @media #{$media-768} {
+        //     width: 350px;
+        //   }
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .footer_bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .logo_container {
-                width: 201px;
-                height: 26px;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                }
-            }
-
-            & > p {
-                font-size: 14px;
-                font-weight: 350px;
-                line-height: 24px;
-                color: #574648;
-            }
-
-            ul {
-                display: flex;
-                gap: 20px;
-
-                p {
-                    font-size: 14px;
-                    font-weight: 400;
-                    line-height: 150%;
-                }
-
-            }
-    
-        }
+        //   @media #{$media-600} {
+        //     width: 100%;
+        //   }
+      }
     }
+
+    .decor_container {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media #{$media-820} {
+        height: 10px;
+        width: 100%;
+      }
+    }
+
+    .footer_bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+
+      .logo_container {
+        width: 201px;
+        height: 26px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      & > p {
+        font-size: 14px;
+        font-weight: 350px;
+        line-height: 24px;
+        color: #574648;
+
+        @media #{$media-1200} {
+          font-size: 13;
+        }
+
+        @media #{$media-600} {
+          font-size: 12;
+        }
+      }
+
+      ul {
+        display: flex;
+        gap: 20px;
+
+        p {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 150%;
+        }
+      }
+    }
+  }
 }

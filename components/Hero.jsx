@@ -1,4 +1,4 @@
-import React, { useState, useRef,useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import heroStyle from "@/styles/components/hero.module.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,59 +8,85 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
-const slides = [
-  {
-    type: "video",
-    src: "/hero_video_1.mp4",
-    text: "Riyadh's Golfing Paradise: Your Gateway to Nature and Sport",
-  },
-  {
-    type: "image",
-    src: "/details_main_bg.png",
-    text: "World Class Championship Golf Course",
-  },
-  {
-    type: "video",
-    src: "/hero_video_1.mp4",
-    text: "Riyadh's Golfing Paradise: Your Gateway to Nature and Sport",
-  },
-  {
-    type: "image",
-    src: "/details_main_bg.png",
-    text: "World Class Championship Golf Course",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
-  const [activeText, setActiveText] = useState(slides[0].text);
+  const { i18n, t } = useTranslation("common");
+
+  const [slides, setSlides] = useState([]);
+  const [activeText, setActiveText] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef(null);
   const paginationRef = useRef(null);
+  const [direction, setDirection] = useState("ltr");
 
+  useEffect(() => {
+    const newDirection = i18n.language === "ar" ? "rtl" : "ltr";
+    setDirection(newDirection);
+
+    if (swiperRef.current) {
+      setTimeout(() => {
+        swiperRef.current.rtlTranslate = newDirection === "rtl";
+        swiperRef.current.update();
+      }, 300);
+    }
+  }, [i18n.language]);
+
+  useEffect(() => {
+    const updatedSlides = [
+      {
+        type: "video",
+        src: "/hero_video_1.mp4",
+        text: t("hero.hero_text_1"),
+      },
+      {
+        type: "image",
+        src: "/details_main_bg.png",
+        text: t("hero.hero_text_2"),
+      },
+      {
+        type: "video",
+        src: "/hero_video_1.mp4",
+        text: t("hero.hero_text_1"),
+      },
+      {
+        type: "image",
+        src: "/details_main_bg.png",
+        text: t("hero.hero_text_2"),
+      },
+    ];
+    setSlides(updatedSlides);
+  }, [i18n.language]);
+
+  useEffect(() => {
+    if (slides.length > 0) {
+      setActiveText(slides[0].text);
+    }
+  }, [slides]);
 
   const handleSlideChange = (swiper) => {
-    const realIndex = swiper.realIndex; 
+    const realIndex = swiper.realIndex;
     setActiveIndex(realIndex);
-    setActiveText(slides[realIndex].text);
+    setActiveText(slides[realIndex]?.text);
   };
 
   const handlePaginationClick = (index) => {
     console.log(swiperRef);
-    
-    swiperRef.current?.slideToLoop(index); 
+
+    swiperRef.current?.slideToLoop(index);
   };
-
-
 
   useEffect(() => {
     if (swiperRef.current && paginationRef.current) {
       const bullets = Array.from(paginationRef.current.children);
       bullets.forEach((bullet, index) => {
-        bullet.addEventListener('click', () => handlePaginationClick(index));
+        bullet.addEventListener("click", () => handlePaginationClick(index));
       });
       return () => {
         bullets.forEach((bullet, index) => {
-          bullet.removeEventListener('click', () => handlePaginationClick(index));
+          bullet.removeEventListener("click", () =>
+            handlePaginationClick(index)
+          );
         });
       };
     }
@@ -74,6 +100,7 @@ const Hero = () => {
         slidesPerView={1}
         effect="fade"
         // pagination={{ clickable: true }}
+        dir={direction}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         loop={true}
         speed={1000}
@@ -102,7 +129,7 @@ const Hero = () => {
           <button
             key={index}
             className={`${heroStyle.bullet} ${
-              index === activeIndex ? heroStyle.active : ''
+              index === activeIndex ? heroStyle.active : ""
             }`}
             aria-label={`Go to slide ${index + 1}`}
             onClick={() => handlePaginationClick(index)}
@@ -115,7 +142,7 @@ const Hero = () => {
           {activeText}
         </h1>
         <button className="light_button">
-          <p>Upcoming Tournaments</p>
+          <p>{t("hero.btn_text")}</p>
           <div className="button_round">
             <div>
               <svg
@@ -150,7 +177,6 @@ const Hero = () => {
       <button
         className={heroStyle.swiper_button_left}
         onClick={() => swiperRef.current?.slidePrev()}
-       
       >
         <div className="">
           <img src="./arrow_big.svg" />

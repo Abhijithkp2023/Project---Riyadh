@@ -2,26 +2,43 @@ import React, { useEffect, useState } from "react";
 import navStyle from "@/styles/components/navbar.module.scss";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarActive, setSidebarActive] = useState(false);
+  const { t, i18n } = useTranslation("common");
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  // to set language eng initially and when refreshes detect language and setting direction
+  useEffect(() => {
+    const savedLang = localStorage.getItem("language") || "en";
+    i18n.changeLanguage(savedLang);
+    document.documentElement.dir = savedLang === "ar" ? "rtl" : "ltr";
+    setIsMounted(true);
+  }, []);
+
+  const changeLanguage = () => {
+    const newLang = i18n.language === "en" ? "ar" : "en";
+    i18n.changeLanguage(newLang);
+    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
+    localStorage.setItem("language", newLang);
+  };
 
   useEffect(() => {
-    window.onscroll = changePos;
-
-    function changePos() {
-      const handleScroll = () => {
-        setScrolled(window.pageYOffset > 70);
-      };
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }
+    const handleScroll = () => {
+      setScrolled(window.pageYOffset > 70);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleSideBar = () => {
     setSidebarActive(!sidebarActive);
   };
+
+  if (!isMounted) return null;
 
   return (
     <>
@@ -32,26 +49,26 @@ const Navbar = () => {
       >
         <div>
           <div className={navStyle.logo_container}>
-            <img src="./nav_logo.svg" alt="" />
+            <img src="/nav_logo.svg" alt="" />
           </div>
           <ul className={navStyle.links_container}>
             <li className="underline_fill">
-              <a href="">Experience Our Activities</a>
+              <a href="#">{t("nav.exp")}</a>
             </li>
-            <li className="underline_fill">Membership</li>
-            <li className="underline_fill">Learn to Play </li>
-            <li className="underline_fill">Corporate Events</li>
-            <li className="underline_fill">Media Center</li>
-            <li className="underline_fill">Contact Us</li>
+            <li className="underline_fill">{t("nav.membership")}</li>
+            <li className="underline_fill">{t("nav.learn_to_play")}</li>
+            <li className="underline_fill">{t("nav.corporate_events")}</li>
+            <li className="underline_fill">{t("nav.media_center")}</li>
+            <li className="underline_fill">{t("nav.contact_us")}</li>
           </ul>
           <ul className={navStyle.end_list}>
             <li>
               <button className={navStyle.book_now_btn}>
-                <span>Book to Play</span>
+                <span>{t("nav.book_now")}</span>
               </button>
             </li>
-            <li className="underline_fill">
-              <a href="">عربي</a>
+            <li className="underline_fill" onClick={changeLanguage}>
+              <a href="#">{i18n.language === "en" ? "عربي" : "English"}</a>
             </li>
             <li className={navStyle.hamburger}>
               <RxHamburgerMenu size={50} onClick={handleSideBar} />
@@ -67,25 +84,24 @@ const Navbar = () => {
       >
         <ul>
           <li className="underline_fill">
-            <a href="#">Experience Our Activities</a>
+            <a href="#">{t("nav.exp")}</a>
           </li>
           <li className="underline_fill">
-            <a href="#">Membership</a>
+            <a href="#">{t("nav.membership")}</a>
           </li>
           <li className="underline_fill">
-            <a href="#">Learn to Play</a>
+            <a href="#">{t("nav.learn_to_play")}</a>
           </li>
           <li className="underline_fill">
-            <a href="#">Corporate Events</a>
+            <a href="#">{t("nav.corporate_events")}</a>
           </li>
           <li className="underline_fill">
-            <a href="#">Media Center</a>
+            <a href="#">{t("nav.media_center")}</a>
           </li>
           <li className="underline_fill">
-            <a href="#">Contact Us</a>
+            <a href="#">{t("nav.contact_us")}</a>
           </li>
         </ul>
-
         <IoMdClose
           className={navStyle.close_icon}
           size={50}

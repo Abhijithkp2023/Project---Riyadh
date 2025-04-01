@@ -1,23 +1,29 @@
 import React from "react";
 import footerStyle from "@/styles/components/footer.module.scss";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation("common");
+
   return (
     <div className={footerStyle.container}>
       <div className={footerStyle.sub_conatiner}>
         <div className={footerStyle.footer_top}>
           <div>
-            <h4>Riyadh Golf Newsletter</h4>
-            <p>Be the first to know about news and events.</p>
+            <h4>{t("footer.newsletter_title")}</h4>
+            <p>{t("footer.newsletter_subtitle")}</p>
           </div>
-          <form action="">
+          <form>
             <div className={footerStyle.news_letter}>
-              <input type="email" placeholder="Email adres" />
+              <input type="email" placeholder={t("footer.email_placeholder")} />
               <button className="dark_button">
-                <p>Subscribe</p>
+                <p>{t("footer.subscribe_btn")}</p>
                 <div className="button_round">
                   <div>
-                    <img src="./arrow_small.svg" />
+                    <img
+                      src="./arrow_small.svg"
+                      alt={t("footer.subscribe_btn")}
+                    />
                   </div>
                 </div>
               </button>
@@ -26,32 +32,33 @@ const Footer = () => {
         </div>
 
         <div className={footerStyle.decor_container}>
-          <img src="./footer_decor.png" alt="" />
+          <img src="./footer_decor.png" alt="footer decoration" />
         </div>
 
         <div className={footerStyle.footer_bottom}>
-          <p>Copyright © 2024 Riyadh Golf Club. All Rights Reserved.</p>
+          <p>{t("footer.copyright")}</p>
+
           <div className={footerStyle.logo_container}>
             <img
               src="https://riyadhgolf.e8demo.com/wp-content/uploads/2025/01/footer_img.svg"
-              alt=""
+              alt="Riyadh Golf Club logo"
             />
           </div>
 
           <ul>
             <li className="underline_fill">
               <a href="">
-                <p>Privacy Policy</p>
+                <p>{t("footer.privacy_policy")}</p>
               </a>
             </li>
             <li className="underline_fill">
               <a href="">
-                <p>Terms of Service</p>
+                <p>{t("footer.terms_service")}</p>
               </a>
             </li>
             <li className="underline_fill">
               <a href="">
-                <p>Cookies Settings</p>
+                <p>{t("footer.cookies_settings")}</p>
               </a>
             </li>
           </ul>

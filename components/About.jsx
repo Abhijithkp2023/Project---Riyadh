@@ -1,33 +1,24 @@
 import React, { useEffect } from "react";
 import aboutStyle from "@/styles/components/about.module.scss";
 // import "@/styles/_base.module.scss"
+import { useTranslation } from "react-i18next";
 
 
 const About = () => {
+  const { i18n, t } = useTranslation("common");
+
   return (
     <div className={`${aboutStyle.about_container} pt_180 pb_180`}>
       {/* <div className="wrapper"> */}
       <div className={`${aboutStyle.about_sub_container}`}>
         <h2 data-aos="fade-up">
-          Where Pristine Fairways And Exceptional Facilities Create An
-          Unforgettable Sporting Experience.
+         {t("about.heading")}
         </h2>
         <p data-aos="fade-up">
-          In Riyadh city the vibrant Saudi capital, Riyadh Golf Club was
-          established in 2005, located just 20 minutes from the city center, the
-          club boasts a full range of leisure facilities. <br />
-          <br />
-          With 18-hole golf course, spanning 26,031 yards with a par of 72,
-          Riyadh golf club have a highly qualified PGA golf professionals
-          coaching team. our pro shop is fully stocked with golf equipment and
-          apparel, our club offers an exceptional experience for its members,
-          featuring diverse dining options, gym, and a luxurious locker room
-          with a jacuzzi and shower area. Riyadh Golf Club is the perfect
-          destination for enjoying time with family and friends, as well as for
-          business meetings.
+        {t("about.para")}
         </p>
         <button className="dark_button" data-aos="fade-up">
-          <p>Upcoming Tournaments</p>
+          <p> {t("about.btn_text")}</p>
           <div className="button_round">
             <div>
               <svg

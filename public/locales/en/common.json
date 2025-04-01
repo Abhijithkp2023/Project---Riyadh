@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "exp": "Experience Our Activities",
+    "membership": "Membership",
+    "learn_to_play": "Learn to Play ",
+    "corporate_events": "Corporate Events",
+    "media_center": "Media Center",
+    "contact_us": "Contact Us",
+    "book_now": "Book Now"
+  },
+
+  "hero": {
+    "hero_text_1": "Riyadh's Golfing Paradise: Your Gateway to Nature and Sport",
+    "hero_text_2": "World Class Championship Golf Course",
+    "btn_text": "Upcoming Tournaments"
+  },
+
+  "about": {
+    "heading": "Where Pristine Fairways And Exceptional Facilities Create An Unforgettable Sporting Experience.",
+    "para": "In Riyadh city the vibrant Saudi capital, Riyadh Golf Club was established in 2005, located just 20 minutes from the city center, the club boasts a full range of leisure facilities. <br /> <br /> With 18-hole golf course, spanning 26,031 yards with a par of 72, Riyadh golf club have a highly qualified PGA golf professionals coaching team. our pro shop is fully stocked with golf equipment and apparel, our club offers an exceptional experience for its members, featuring diverse dining options, gym, and a luxurious locker room with a jacuzzi and shower area. Riyadh Golf Club is the perfect destination for enjoying time with family and friends, as well as for business meetings.",
+    "btn_text": "Upcoming Tournaments"
+  },
+  "facilities": {
+    "memberships": "Memberships",
+    "golf_by_Night": "Golf by Night",
+    "padel": "Padel",
+    "pro_Shop": "Pro Shop",
+    "dining": "Dining",
+    "driving_Range": "Driving Range"
+  },
+
+  "details": {
+    "main_heading": "World Class Championship Golf Course",
+    "holes": "Holes",
+    "yards": "Yards",
+    "par": "Par",
+    "btn_text_course_tour": "Take a Course Tour",
+    "btn_text_view_details": "View Details"
+  },
+
+  "learn": {
+    "main_heading": "Learn to Play Golf At Riyadh Golf Club",
+    "read_more_btn": "Read More",
+    "junior_heading": "Golf for Juniors",
+    "junior_para": " Lorem ipsum dolor sit amet consectetur adipiscing elit nulla pretium ultrices consectetur. Duis condimentum augue non turpis laoreet, dapibus ornare.",
+    "ladies_heading": "Golf for Ladies",
+    "ladies_para": " Lorem ipsum dolor sit amet consectetur adipiscing elit nulla pretium ultrices consectetur. Duis condimentum augue non turpis laoreet, dapibus ornare.",
+    "men_heading": "Golf for Men",
+    "men_para": " Lorem ipsum dolor sit amet consectetur adipiscing elit nulla pretium ultrices consectetur. Duis condimentum augue non turpis laoreet, dapibus ornare."
+  },
+  "event": {
+    "event_heading": "Corporate Golf and Private events",
+    "event_para": " Riyadh Golf Club is a Golf Saudi managed golf facility, employing the very best individuals, providing operational excellence and afirst-class experience to all golf and non-golf visitors.",
+    "read_more_btn": "Read More"
+  },
+  "media": {
+    "media_center": "Media Center",
+    "latest_news": "Latest News",
+    "latest_news_para": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "date": "12 April, 2024",
+    "read_more_btn": "Read More",
+    "news": "News",
+    "sub_news": "  The first edition of the Mahd International Golf Championship"
+  },
+
+  "reviews": {
+    "main_heading" : "What our Golfers Say!",
+  "review_1": "I've played at many clubs, but this one stands out for its impeccable service and beautifully designed course.",
+  "review_2": "As someone new to the game, finding a course that's both challenging and fun can be tough, but this place is perfect!",
+  "review_3": "This is one of the most well-maintained courses I've played. The attention to detail, from the perfectly manicured greens to the excellent clubhouse, makes every round enjoyable.",
+  "titles": {
+    "professional": "Professional Golfer",
+    "enthusiast": "Golf Enthusiast",
+    "amateur": "Amateur Golfer"
+  }
+},
+
+  "footer": {
+    "newsletter_title": "Riyadh Golf Newsletter",
+    "newsletter_subtitle": "Be the first to know about news and events.",
+    "email_placeholder": "Email address",
+    "subscribe_btn": "Subscribe",
+    "copyright": "Copyright © 2024 Riyadh Golf Club. All Rights Reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_service": "Terms of Service",
+    "cookies_settings": "Cookies Settings"
+  }
+}

@@ -1,37 +1,37 @@
 import React, { useEffect } from "react";
 import detailsStyle from "@/styles/components/details.module.scss";
-
+import { useTranslation } from "react-i18next";
 
 const Details = () => {
-
+  const { i18n, t } = useTranslation("common");
 
   return (
     <div className={detailsStyle.container}>
       <div>
         <div className={detailsStyle.text_container} data-aos="fade-up">
-          <h3>World Class Championship Golf Course</h3>
+          <h3>{t("details.main_heading")}</h3>
         </div>
 
         <div className={detailsStyle.details}>
           <ul className={detailsStyle.details_top}>
             <li data-aos="flip-left" data-aos-easing="ease-out-cubic">
               <p>18</p>
-              <span>Holes</span>
+              <span>{t("details.holes")}</span>
             </li>
             <li data-aos="flip-left" data-aos-easing="ease-out-cubic">
               <p>26,031</p>
-              <span>Yards</span>
+              <span>{t("details.yards")}</span>
             </li>
-            <li data-aos="flip-left" data-aos-easing="ease-out-cubic"   >
+            <li data-aos="flip-left" data-aos-easing="ease-out-cubic">
               <p>72</p>
-              <span>Par</span>
+              <span>{t("details.par")}</span>
             </li>
           </ul>
 
           <ul className={detailsStyle.details_bottom}>
             <li>
               <button className="dark_button" data-aos="fade-up">
-                <p>Take a Course Tour</p>
+                <p>{t("details.btn_text_course_tour")}</p>
                 <div className="button_round">
                   <div>
                     <svg
@@ -53,7 +53,7 @@ const Details = () => {
 
             <li>
               <button className="transparent_button" data-aos="fade-up">
-                <p>View Details</p>
+                <p>{t("details.btn_text_view_details")}</p>
                 <div className="button_round">
                   <div>
                     <svg
