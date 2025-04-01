@@ -141,6 +141,7 @@ const Hero = () => {
         <h1 key={activeText} className={heroStyle.fade_in}>
           {activeText}
         </h1>
+        
         <button className="light_button">
           <p>{t("hero.btn_text")}</p>
           <div className="button_round">

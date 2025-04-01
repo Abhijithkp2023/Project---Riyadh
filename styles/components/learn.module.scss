@@ -148,9 +148,14 @@
             align-items: center;
             top: -24px;
             overflow: hidden;
-            left: 50%;
-            right: 50%;
-            transform: translateX(-50%);
+            // left: 50%;
+            // right: 50%;
+            // transform: translateX(-50%);
+
+            @media #{$media-768}{
+              height: 48px;
+                width: 48px;
+            }
 
             img {
               scale: 1.4;

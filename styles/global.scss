@@ -8,8 +8,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Adelle Sans, sans-serif;
+  // font-family: Adelle Sans, sans-serif;
 }
+
+
 
 @font-face {
   font-family: Adelle Sans;
@@ -39,6 +41,20 @@
   font-style: normal;
 }
 
+
+:root {
+  --font-size-heading: 3.12rem;
+  --font-weight-heading: 700;
+  --line-height-heading: 112.00000000000001%;
+
+  --font-primary: Adelle Sans, sans-serif;
+  --font-arabic: Noto Sans Arabic, sans-serif;
+
+  --font-size-para: 16px;
+  --font-weight-para: 400;
+  --line-height-para: 27px;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -47,20 +63,17 @@ html {
 
 body {
   overflow-x: hidden;
+
+  font-family: var(--font-primary);
+
+
+  [dir="rtl"] & {
+    font-family: var(--font-arabic);
+  }
 }
 
 html {
   font-size: 16px;
-}
-
-:root {
-  --font-size-heading: 3.12rem;
-  --font-weight-heading: 700;
-  --line-height-heading: 112.00000000000001%;
-
-  --font-size-para: 16px;
-  --font-weight-para: 400;
-  --line-height-para: 27px;
 }
 
 @media (max-width: 1600px) {
@@ -111,8 +124,7 @@ a {
   cursor: pointer;
 }
 
-@media (max-width: 1600px) {
-}
+@media (max-width: 1600px) {}
 
 // -------------- light backgorund && dark text button ---------------
 
@@ -153,6 +165,7 @@ a {
 
       svg {
         color: white;
+        
       }
     }
   }
@@ -179,7 +192,7 @@ a {
 
   @media #{$media-820} {
     height: 40px;
-    padding: 0px 10px 0px 20px;
+    padding: 0px 12px 0px 12px;
 
     p {
       font-size: 14px;
@@ -203,7 +216,7 @@ a {
   height: 48px;
   border: none;
   border-radius: 30px;
-  padding: 0px 10px 0px 30px;
+  padding: 0px 15px 0px 15px;
   color: white;
   width: fit-content;
   cursor: pointer;
@@ -232,9 +245,16 @@ a {
 
       svg {
         color: white;
+
+        [dir="rtl"] {
+          transform: rotate(180deg);
+          background: yellow;
+        }
       }
     }
   }
+
+    
 
   &::before {
     content: "";
@@ -256,7 +276,7 @@ a {
 
   @media #{$media-820} {
     height: 40px;
-    padding: 0px 10px 0px 20px;
+    padding: 0px 12px 0px 12px;
 
     p {
       font-size: 14px;
@@ -270,6 +290,9 @@ a {
 
 }
 
+
+
+
 // --------  button with white transparent backgorund ------------
 
 .transparent_button {
@@ -282,7 +305,7 @@ a {
   height: 48px;
   border: none;
   border-radius: 30px;
-  padding: 0px 10px 0px 30px;
+  padding: 0px 15px 0px 15px;
   color: white;
   width: fit-content;
   cursor: pointer;
@@ -333,7 +356,7 @@ a {
 
   @media #{$media-820} {
     height: 40px;
-    padding: 0px 10px 0px 20px;
+    padding: 0px 12px 0px 12px;
 
     p {
       font-size: 14px;
@@ -344,7 +367,7 @@ a {
       width: 30px;
     }
   }
-  
+
 }
 
 // --------------- button with no white background for news --------
@@ -386,6 +409,7 @@ a {
   }
 
   &:hover {
+
     // p {
     //   transform: scale(1.1);
     // }
@@ -393,6 +417,13 @@ a {
       transform: scale(1.1);
     }
   }
+}
+
+[dir="rtl"] .dark_button div.button_round svg,
+[dir="rtl"] .light_button div.button_round svg,
+[dir="rtl"] .transparent_button div.button_round svg,
+[dir="rtl"] .read_more_button svg {
+  transform: rotate(180deg);
 }
 
 // -------------image decoration on sides---------------

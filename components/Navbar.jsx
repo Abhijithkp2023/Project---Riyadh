@@ -3,11 +3,14 @@ import navStyle from "@/styles/components/navbar.module.scss";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarActive, setSidebarActive] = useState(false);
   const { t, i18n } = useTranslation("common");
+  const router = useRouter()
+  const { locale } = router;
 
   const [isMounted, setIsMounted] = useState(false);
 
@@ -24,6 +27,8 @@ const Navbar = () => {
     i18n.changeLanguage(newLang);
     document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
     localStorage.setItem("language", newLang);
+
+    router.push(router.pathname, router.pathname, { locale: newLang });
   };
 
   useEffect(() => {
@@ -68,7 +73,9 @@ const Navbar = () => {
               </button>
             </li>
             <li className="underline_fill" onClick={changeLanguage}>
-              <a href="#">{i18n.language === "en" ? "عربي" : "English"}</a>
+              <a>
+                {locale === "en" ? "عربي" : "English"}
+              </a>
             </li>
             <li className={navStyle.hamburger}>
               <RxHamburgerMenu size={50} onClick={handleSideBar} />

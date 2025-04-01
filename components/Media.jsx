@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import mediaStyle from "@/styles/components/media.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
@@ -11,7 +11,21 @@ import { useTranslation } from "react-i18next";
 
 const Media = () => {
   const swiperRef = useRef(null);
-  const { t } = useTranslation("common");
+   const [direction, setDirection] = useState("ltr");
+  const { t, i18n } = useTranslation("common");
+
+   useEffect(() => {
+      const newDirection = i18n.language === "ar" ? "rtl" : "ltr";
+      setDirection(newDirection);
+  
+      if (swiperRef.current) {
+        setTimeout(() => {
+          swiperRef.current.rtlTranslate = newDirection === "rtl";
+          swiperRef.current.update();
+        }, 300);
+      }
+    }, [i18n.language]);
+  
 
   return (
     <div className={`${mediaStyle.media_container} pt_180 pb_180`}>
@@ -195,12 +209,14 @@ const Media = () => {
         </div>
 
         <Swiper
-          spaceBetween={50}
+        key={direction}
+          spaceBetween={500}
           slidesPerView={1}
           autoplay={{
             delay: 1500,
             disableOnInteraction: false,
           }}
+           dir={direction}
           // pagination={{ clickable: true }}
           loop={true}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -218,8 +234,8 @@ const Media = () => {
           <SwiperSlide className={mediaStyle.slider}>
             <div className={mediaStyle.slider_top}>
               <span>{t("media.latest_news")}</span>
-              <h5>{t("media.latest_news")}</h5>
-              <span className={mediaStyle.date}>12 April, 2024</span>
+              <h5>{t("media.latest_news_para")}</h5>
+              <span className={mediaStyle.date}>{t("media.date")}</span>
               <button className="read_more_button">
                 <p>{t("media.latest_news")}</p>
 
@@ -250,8 +266,8 @@ const Media = () => {
           <SwiperSlide className={mediaStyle.slider}>
             <div className={mediaStyle.slider_top}>
               <span>{t("media.latest_news")}</span>
-              <h5>{t("media.latest_news")}</h5>
-              <span className={mediaStyle.date}>{t("media.latest_news")}</span>
+              <h5>{t("media.latest_news_para")}</h5>
+              <span className={mediaStyle.date}>{t("media.date")}</span>
               <button className="read_more_button">
                 <p>{t("media.latest_news")}</p>
 
@@ -281,22 +297,25 @@ const Media = () => {
         </Swiper>
 
         <div className={mediaStyle.button_container}>
-          <button
+        
+           <button
             className={mediaStyle.swiper_button_right}
+             onClick={() => swiperRef.current?.slideNext()}
+          >
+            <div className="">
+              <img src="./arrow_big.svg" />
+            </div>
+          </button>
+           
+          <button
+            className={mediaStyle.swiper_button_left}
+           
             onClick={() => swiperRef.current?.slidePrev()}
           >
             <div className="">
               <img src="./arrow_big.svg" />
             </div>
-          </button>
-          <button
-            className={mediaStyle.swiper_button_left}
-            onClick={() => swiperRef.current?.slideNext()}
-          >
-            <div className="">
-              <img src="./arrow_big.svg" />
-            </div>
-          </button>
+          </button> 
         </div>
       </div>
     </div>

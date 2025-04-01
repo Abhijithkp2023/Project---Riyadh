@@ -171,13 +171,13 @@ const Review = () => {
           </div>
         </button>
       </div>
-
+{/* 
       <div className="img_left">
         <img src="./about_decor_left.png" alt="" />
       </div>
       <div className="img_right">
         <img src="./about_decor_right.png" alt="" />
-      </div>
+      </div> */}
     </div>
   );
 };
