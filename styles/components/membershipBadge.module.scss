@@ -1,0 +1,84 @@
+@import "../_variables";
+@import "../_mixins";
+
+.container {
+  background-color: $dark-color;
+  width: 100vw;
+  padding: 40px 0;
+
+  .wrapper {
+    @include wrapper;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+
+
+
+    h3 {
+        font-weight: 700;
+        font-size: 2.8125rem;
+        line-height: 112.00000000000001%;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  li {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border: 1px solid #F5EDE6;
+    border-radius: 30px;
+    text-align: center;
+
+   
+    a {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-decoration: none;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center   ;
+      display: block; 
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #F5EDE6;
+      transition: width 0.3s ease;
+      z-index: 1;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+      
+      a {
+        color: $dark-color;
+      }
+    }
+  }
+}

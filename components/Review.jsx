@@ -124,6 +124,7 @@ const Review = () => {
           1024: { slidesPerView: 3 },
           1300: { slidesPerView: 4 },
         }}
+        className={reviewStyle.slide_container}
         speed={200}
       >
         {reviewers.map((review) => (
@@ -171,13 +172,6 @@ const Review = () => {
           </div>
         </button>
       </div>
-{/* 
-      <div className="img_left">
-        <img src="./about_decor_left.png" alt="" />
-      </div>
-      <div className="img_right">
-        <img src="./about_decor_right.png" alt="" />
-      </div> */}
     </div>
   );
 };

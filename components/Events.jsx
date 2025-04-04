@@ -45,7 +45,7 @@ const Events = () => {
           </button>
         </div>
 
-        <div className={eventsStyle.event_img_container}>
+        <div className="event_img_container">
           {[
             ["./event_img_1.png", "./event_img_2.png", 3000],
             ["./event_img_2.png", "./event_img_3.png", 4000],
@@ -56,7 +56,7 @@ const Events = () => {
               effect="flip"
               grabCursor
               modules={[EffectFlip, Autoplay]}
-              className={`${eventsStyle.swiper_3d} mySwiper`}
+              className="mySwiper"
               autoplay={{ delay, disableOnInteraction: false }}
               dir={direction}
               speed={3000}

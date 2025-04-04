@@ -85,7 +85,7 @@
   .swiper_button_right,
   .swiper_button_left {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     width: 67px;
     height: 67px;
@@ -104,10 +104,19 @@
       height: 37px;
       width: 25px;
     }
+
+    @media (min-resolution: 144dpi) {
+      width: 57px;
+      height: 57px;
+    }
   }
 
   .swiper_button_right {
     right: 104px;
+
+    @media (min-resolution: 144dpi) {
+      right: 80px;
+    }
 
     img {
       transform: rotate(135deg);
@@ -121,6 +130,10 @@
 
   .swiper_button_left {
     left: 104px;
+
+    @media (min-resolution: 144dpi) {
+      left: 80px;
+    }
 
     img {
       transform: rotate(315deg);
@@ -170,7 +183,6 @@
 
 @media #{$media-1200} {
   .container {
-
     .swiper_button_right,
     .swiper_button_left {
       width: 40px;

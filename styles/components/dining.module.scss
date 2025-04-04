@@ -1,0 +1,68 @@
+@import "../variables";
+@import "../mixins";
+
+.container {
+  width: 100vw;
+  position: relative;
+  //   overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &::before {
+    left: 0;
+    width: 110px;
+    height: 100%;
+    background-image: url("/about_decor_left.png");
+
+    @media #{$media-700} {
+      display: none;
+    }
+  }
+
+  &::after {
+    right: 0;
+    width: 55px;
+    height: 902px;
+    background-image: url("/about_decor_right.png");
+
+    @media #{$media-700} {
+      width: 30px;
+    }
+  }
+
+  .wrapper {
+    max-width: calc(1600px + 6%);
+    padding: 0 3% 0 3%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // overflow: hidden;
+
+    @media #{$media-820} {
+      flex-direction: column;
+    }
+  }
+}
+
+.text_container {
+  width: 50%;
+  max-width: 654px;
+
+  @media #{$media-820} {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  p {
+    margin-top: 20px;
+  }
+}

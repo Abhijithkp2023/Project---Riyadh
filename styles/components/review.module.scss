@@ -7,6 +7,7 @@
   width: 100%;
   background: white;
   position: relative;
+  overflow: hidden;
 
   &::before,
   &::after {
@@ -32,7 +33,7 @@
   &::after {
     right: 0;
     width: 55px;
-    height: 902px;
+    height: 100%;
     z-index: 1;
     background-image: url("/about_decor_right.png");
 
@@ -51,7 +52,7 @@
 
     h2 {
       position: relative;
-      padding-left: calc((100vw - 1600px) / 2);
+      // padding-left: calc((100vw - 1600px) / 2);
       font-size: var(--font-size-heading);
       font-weight: var(--font-weight-heading);
       // line-height: var(--line-height-heading);
@@ -59,76 +60,79 @@
     }
   }
 
-  .slides {
-    margin-top: 50px;
-    background: #f5ede6;
-    padding: 30px 40px;
-    border-radius: 30px;
-    border: 1px solid #805e591a;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    z-index: 2;
+  .slide_container {
+    z-index: 95;
 
-    &>p {
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 26px;
+    .slides {
+      margin-top: 50px;
+      background: #f5ede6;
+      padding: 30px 40px;
+      border-radius: 30px;
+      border: 1px solid #805e591a;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      z-index: 2;
 
-      @media #{$media-1600} {
-        font-size: 16px;
-      }
+      & > p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 26px;
 
-      @media #{$media-768} {
-        font-size: 14px;
-      }
-    }
+        @media #{$media-1600} {
+          font-size: 16px;
+        }
 
-    .quote_container {
-      height: max-content;
-      width: max-content;
-      object-fit: 100%;
-
-      img {
-        object-fit: contain;
-      }
-
-      @media #{$media-1024} {
-        height: 40px;
-        width: 40px;
-
-        img {
-          height: 100%;
-          width: 100%;
+        @media #{$media-768} {
+          font-size: 14px;
         }
       }
 
+      .quote_container {
+        height: max-content;
+        width: max-content;
+        object-fit: 100%;
 
-      &.rtl {
-        transform: rotate(180deg);
+        img {
+          object-fit: contain;
+        }
+
+        @media #{$media-1024} {
+          height: 40px;
+          width: 40px;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        &.rtl {
+          transform: rotate(180deg);
+        }
       }
-    }
 
-    .reviewer_info {
-      display: flex;
-      align-items: center;
-      gap: 25px;
+      .reviewer_info {
+        display: flex;
+        align-items: center;
+        gap: 25px;
 
-      h5 {
-        font-size: 1.375rem;
-        font-weight: 700;
-        line-height: 40px;
-      }
+        h5 {
+          font-size: 1.375rem;
+          font-weight: 700;
+          line-height: 40px;
+        }
 
-      span {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 40px;
-        color: #777777;
+        span {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 40px;
+          color: #777777;
 
-        @media #{$media-1600} {
-          font-size: 14px;
-          line-height: 30px;
+          @media #{$media-1600} {
+            font-size: 14px;
+            line-height: 30px;
+          }
         }
       }
     }
@@ -191,10 +195,10 @@
       justify-content: center;
       align-items: center;
       border: none;
-  
+
       div {
         height: 60%;
-        width: 60%; 
+        width: 60%;
 
         img {
           height: 100%;
@@ -209,25 +213,22 @@
       }
     }
 
-         
-         .swiper_button_right>div {
-           transform: rotate(-45deg);
-         }
-    
-         .swiper_button_left>div {
-           transform: rotate(135deg);
-         }
-    
-        
-         [dir="rtl"] & {
-           .swiper_button_right>div {
-             transform: rotate(135deg);
-           }
-    
-           .swiper_button_left>div {
-             transform: rotate(-45deg);
-           }
-         }
-  }
+    .swiper_button_right > div {
+      transform: rotate(-45deg);
+    }
 
+    .swiper_button_left > div {
+      transform: rotate(135deg);
+    }
+
+    [dir="rtl"] & {
+      .swiper_button_right > div {
+        transform: rotate(135deg);
+      }
+
+      .swiper_button_left > div {
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }

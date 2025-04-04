@@ -9,6 +9,12 @@ import Review from "@/components/Review";
 import Head from "next/head";
 
 export default function Home() {
+  const aboutContent = {
+    heading: "about.heading",
+    para: "about.para",
+    buttonText: "about.btn_text",
+  };
+
   return (
     <>
       <Head>
@@ -18,7 +24,7 @@ export default function Home() {
       </Head>
       <main className="main_conatiner">
         <Hero />
-        <About /> 
+        <About content={aboutContent} />
         <Facilities />
         <Details />
         <Learn />

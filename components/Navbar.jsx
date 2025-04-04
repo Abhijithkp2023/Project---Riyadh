@@ -4,12 +4,13 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarActive, setSidebarActive] = useState(false);
   const { t, i18n } = useTranslation("common");
-  const router = useRouter()
+  const router = useRouter();
   const { locale } = router;
 
   const [isMounted, setIsMounted] = useState(false);
@@ -48,22 +49,31 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`${navStyle.navbar_container} ${scrolled ? navStyle.fixed : ""
-          }`}
+        className={`${navStyle.navbar_container} ${
+          scrolled ? navStyle.fixed : ""
+        }`}
       >
         <div>
           <div className={navStyle.logo_container}>
-            <img src="/nav_logo.svg" alt="" />
+            <Link href="/"><img src="/nav_logo.svg" alt="" /></Link>
           </div>
           <ul className={navStyle.links_container}>
             <li className="underline_fill">
-              <a href="#">{t("nav.exp")}</a>
+              <Link href={"/experience"}>{t("nav.exp")}</Link>
             </li>
-            <li className="underline_fill">{t("nav.membership")}</li>
-            <li className="underline_fill">{t("nav.learn_to_play")}</li>
-            <li className="underline_fill">{t("nav.corporate_events")}</li>
+            <li className="underline_fill">
+              <Link href="/membership"> {t("nav.membership")}</Link>
+            </li>
+            <li className="underline_fill">
+              <Link href="/member"> {t("nav.learn_to_play")}</Link>
+            </li>
+            <li className="underline_fill">
+              <Link href="/tournaments">{t("nav.corporate_events")}</Link>
+            </li>
             <li className="underline_fill">{t("nav.media_center")}</li>
-            <li className="underline_fill">{t("nav.contact_us")}</li>
+            <li className="underline_fill"> 
+              <Link href="/contact"> {t("nav.contact_us")}</Link>
+            </li>
           </ul>
           <ul className={navStyle.end_list}>
             <li>
@@ -84,15 +94,16 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`${navStyle.sidebar} ${sidebarActive ? navStyle.active : ""
-          }`}
+        className={`${navStyle.sidebar} ${
+          sidebarActive ? navStyle.active : ""
+        }`}
       >
         <ul>
           <li className="underline_fill">
-            <a href="#">{t("nav.exp")}</a>
+            <Link href={"/experience"}>{t("nav.exp")}</Link>
           </li>
           <li className="underline_fill">
-            <a href="#">{t("nav.membership")}</a>
+            <Link href="/membership">{t("nav.membership")}</Link>
           </li>
           <li className="underline_fill">
             <a href="#">{t("nav.learn_to_play")}</a>
@@ -104,7 +115,10 @@ const Navbar = () => {
             <a href="#">{t("nav.media_center")}</a>
           </li>
           <li className="underline_fill">
-            <a href="#">{t("nav.contact_us")}</a>
+            <li className="underline_fill">
+              {" "}
+              <Link href="/contact"> {t("nav.contact_us")}</Link>
+            </li>
           </li>
         </ul>
         <IoMdClose

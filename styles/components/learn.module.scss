@@ -3,39 +3,16 @@
 
 .learn_container {
   width: 100%;
-  // height: 904px;
   align-items: center;
-  background: url("/learn_junior.bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  transition: all .3s ease;
-
-  &:has(.ladies:hover) {
-    background: url("/learn.ladies.bg.jpg");
-  }
-
-  &:has(.men:hover) {
-    background: url("/learn.men.bg.jpg");
-  }
-
+  position: relative;
+  z-index: 1;
 
   @media #{$media-768} {
-    background: none;
-    background-color: #f1dfd3;
+    background-color: #f1dfd3 !important;
   }
 
-  & > div {
-    height: 100%;
-    width: 100%;
-    background: rgba($color: #f5ede6cc, $alpha: 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    &:has(div:hover) {
-      background: rgba($color: #f5ede6cc, $alpha: 0.6);
-    }
+   
 
     .sub_container {
       @include wrapper;
@@ -44,7 +21,6 @@
       flex-direction: column;
       overflow: hidden;
       gap: 100px;
-
       
       @media #{$media-1600} {
         padding: 0 5%;
@@ -78,16 +54,13 @@
         gap: 30px;
         margin-bottom: 130px;
 
-
         @media #{$media-1024} {
           gap: 20px;
         }
-
         
         @media #{$media-820} {
           gap: 15px;
           margin-bottom: 0px;
-
           display: flex;
           flex-direction: column;
           gap: 40px;
@@ -109,18 +82,18 @@
           border-radius: 15px;
           position: relative;
           padding: 40px 20px 30px 20px;
+          transition: all 0.3s ease;
 
-
-          
-        @media #{$media-1024} {
-          gap: 20px;
-        }
+          @media #{$media-1024} {
+            gap: 20px;
+          }
 
           h3 {
             font-size: 2.5rem;
-            font-weight: 700px;
+            font-weight: 700;
             line-height: 112%;
             color: #805e59;
+            transition: color 0.3s ease;
           }
 
           p {
@@ -128,13 +101,12 @@
             font-weight: 400;
             line-height: 26px;
             max-width: 409px;
+            transition: color 0.3s ease;
 
-
-            
-        @media #{$media-1600} {
-          font-size: 14px;
-          line-height: 23px;
-        }
+            @media #{$media-1600} {
+              font-size: 14px;
+              line-height: 23px;
+            }
           }
 
           & > div {
@@ -148,13 +120,10 @@
             align-items: center;
             top: -24px;
             overflow: hidden;
-            // left: 50%;
-            // right: 50%;
-            // transform: translateX(-50%);
 
-            @media #{$media-768}{
+            @media #{$media-768} {
               height: 48px;
-                width: 48px;
+              width: 48px;
             }
 
             img {
@@ -173,8 +142,6 @@
         }
       }
 
-
-
       .button_bottom {
         display: none;
 
@@ -185,13 +152,10 @@
       }
 
       .button_top {
-        
         @media #{$media-820} {
           display: none;
         }
       }
-
-
     }
-  }
+  // }
 }
