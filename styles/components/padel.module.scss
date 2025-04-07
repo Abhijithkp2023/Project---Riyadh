@@ -11,18 +11,27 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     align-items: flex-start;
-    // overflow: hidden; 
+    // overflow: hidden;
     align-items: center;
+
+
+
+    @media #{$media-820} {
+      flex-direction: column-reverse;
+      gap: 40px;
+    }
+
   }
 }
 
 .right_timing_container {
   width: 42%;
-  margin-right: 5%;
 
-  // Added spacing between sections
+  @media #{$media-820} {
+    width: 100%;
+  }
+
   > div {
     margin-bottom: 2rem;
   }
@@ -32,7 +41,8 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem; // Added gap between items
+  gap: 1rem;
+  margin-bottom: 20px;
 
   // First li takes full width
   & > li:first-child {
@@ -40,14 +50,14 @@
 
     & > div {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       gap: 1rem;
       padding: 2rem;
-      background: rgba($color: #ffffff, $alpha: .40);
+      background: rgba($color: #ffffff, $alpha: 0.4);
       border: 1px solid white;
       border-radius: 15px;
 
-      // Each block inside first li
       & > div {
         display: flex;
         align-items: center;
@@ -67,6 +77,21 @@
           font-weight: 350;
           white-space: nowrap;
 
+          @media #{$media-1600} {
+            line-height: 24px;
+            font-size: 18px;
+          }
+
+          @media #{$media-1200} {
+            line-height: 22px;
+            font-size: 16px;
+          }
+
+          @media #{$media-768} {
+            line-height: 20px;
+            font-size: 14px;
+          }
+
           span {
             font-weight: 700;
           }
@@ -80,11 +105,10 @@
     width: calc((100% - 2rem) / 3);
     padding: 2rem;
     border-radius: 15px;
-    background: rgba($color: #ffffff, $alpha: .40);
+    background: rgba($color: #ffffff, $alpha: 0.4);
     border: 1px solid white;
 
     & > div {
-      
       height: 100%;
 
       p {
@@ -95,6 +119,23 @@
         line-height: 27px;
 
 
+        @media #{$media-1600} {
+          font-size: 21px;
+          line-height: 24px;
+          
+        }
+
+        @media #{$media-1200} {
+          line-height: 22px;
+          font-size: 16px;
+        }
+
+
+        @media #{$media-768} {
+          line-height: 20px;
+          font-size: 14px;
+        }
+
         span {
           font-weight: 700;
         }
@@ -102,5 +143,3 @@
     }
   }
 }
-
-

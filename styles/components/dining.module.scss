@@ -22,7 +22,7 @@
     height: 100%;
     background-image: url("/about_decor_left.png");
 
-    @media #{$media-700} {
+    @media #{$media-820} {
       display: none;
     }
   }
@@ -33,15 +33,13 @@
     height: 902px;
     background-image: url("/about_decor_right.png");
 
-    @media #{$media-700} {
+    @media #{$media-820} {
       width: 30px;
     }
   }
 
   .wrapper {
-    max-width: calc(1600px + 6%);
-    padding: 0 3% 0 3%;
-    margin: 0 auto;
+    @include wrapper;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,6 +47,7 @@
 
     @media #{$media-820} {
       flex-direction: column;
+      gap: 40px;
     }
   }
 }
@@ -59,7 +58,6 @@
 
   @media #{$media-820} {
     width: 100%;
-    padding: 0 20px;
   }
 
   p {

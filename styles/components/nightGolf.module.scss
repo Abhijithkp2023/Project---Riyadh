@@ -24,7 +24,7 @@
     height: 100%;
     background-image: url("/about_decor_left.png");
 
-    @media #{$media-700} {
+    @media #{$media-820} {
       display: none;
     }
   }
@@ -46,6 +46,12 @@
     justify-content: space-between;
     align-items: center;
     gap: 50px;
+
+
+
+    @media #{$media-820} {
+      flex-direction: column;
+    }
   }
 }
 
@@ -55,6 +61,11 @@
   gap: 20px;
   width: 50%;
   max-width: 719px;
+
+  @media #{$media-820} {
+    width: 100%;
+    max-width: none;
+  }
 
   h2 {
     font-size: 2.81rem;
@@ -67,6 +78,12 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 27px;
+
+
+
+    @media #{$media-1600} {
+      font-size: 14px;
+    }
   }
 }
 

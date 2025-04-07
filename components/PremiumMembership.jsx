@@ -8,6 +8,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 const PremiumMembership = () => {
   const membershipData = [
@@ -31,7 +32,9 @@ const PremiumMembership = () => {
   return (
     <div className={style.container}>
       <div className={style.wrapper}>
-        <h3 className="section_header">Premium Memberships</h3>
+        <h3 className="section_header" data-aos="fade-up">
+          Premium Memberships
+        </h3>
         <Swiper
           slidesPerView={1}
           breakpoints={{
@@ -45,12 +48,14 @@ const PremiumMembership = () => {
           pagination={{ clickable: true }}
         >
           {membershipData.map((membership, index) => (
-            <SwiperSlide key={index} className="slider">
-              <img src={membership.imgSrc} alt="" className="img_cover" />
-              <div className="text_container">
-                <h5>{membership.title}</h5>
-                <h6>{membership.price}</h6>
-              </div>
+            <SwiperSlide key={index} className="slider" data-aos="fade-up">
+              <Link href="#">
+                <img src={membership.imgSrc} alt="" className="img_cover" />
+                <div className="text_container">
+                  <h5>{membership.title}</h5>
+                  <h6>{membership.price}</h6>
+                </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

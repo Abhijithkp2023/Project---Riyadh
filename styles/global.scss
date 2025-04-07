@@ -148,13 +148,25 @@ a {
   font-size: 2.8125rem;
   font-weight: 700;
   line-height: 112.00000000000001%;
-  color: #241F21;
+  color: #241f21;
 }
 
 .para {
   font-size: 16px;
   font-weight: 400;
   line-height: 27px;
+
+
+  @media #{$media-1200} {
+   line-height: 22px;
+    
+  }
+
+
+  @media #{$media-1600} {
+    font-size: 14px;
+    
+  }
 }
 
 // -------------- light backgorund && dark text button ---------------
@@ -706,22 +718,7 @@ a {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 // --------------------flip image----------------
-
-
-
 
 .event_img_container {
   width: 45%;
@@ -732,38 +729,33 @@ a {
 
   @media #{$media-820} {
     width: 100%;
-   }
-  
-
-  & >:nth-child(1) {
-    width: 48%;
-    height: 38vh;
-    border-radius: 15px;
-   
-    
-
-    @media #{$media-820} {
-      height: 35vh;
-     }
-
-
-     @media #{$media-700} {
-      display: none;
-     }
-    
   }
 
-  & >:nth-child(2) {
+  & > :nth-child(1) {
     width: 48%;
     height: 38vh;
     border-radius: 15px;
 
     @media #{$media-820} {
       height: 35vh;
-     }
-     @media #{$media-700} {
+    }
+
+    @media #{$media-700} {
       display: none;
-     }
+    }
+  }
+
+  & > :nth-child(2) {
+    width: 48%;
+    height: 38vh;
+    border-radius: 15px;
+
+    @media #{$media-820} {
+      height: 35vh;
+    }
+    @media #{$media-700} {
+      display: none;
+    }
   }
 
   & > :nth-child(3) {
@@ -773,15 +765,15 @@ a {
 
     @media #{$media-820} {
       height: 35vh;
-     }
+    }
   }
 
-   div > img {
+  div > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
-    box-shadow:  2px 2px 2px 1px #888888;
+    box-shadow: 2px 2px 2px 1px #888888;
   }
 
   .flip_container {
@@ -805,6 +797,28 @@ a {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+}
+
+// -------------default image scaling to membership pages---------
+.swiper_container {
+  .slider {
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+
+    .img_cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    &:hover .img_cover {
+      transform: scale(1.1);
     }
   }
 }

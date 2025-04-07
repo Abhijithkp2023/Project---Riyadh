@@ -1,3 +1,4 @@
+import Contact from '@/components/Contact'
 import HeroBanner from '@/components/HeroBanner'
 import Head from 'next/head'
 import React from 'react'
@@ -15,6 +16,7 @@ const contact = () => {
       title="Contact Us"
     />
     {/* <About content={aboutMembership} /> */}
+    <Contact />
   </>
   )
 }

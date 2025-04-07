@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/effect-flip";
 import "swiper/css/autoplay";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 const Events = () => {
   const { t, i18n } = useTranslation("common");
@@ -63,7 +64,7 @@ const Events = () => {
               loop
             >
               <SwiperSlide>
-                <img src={img1} alt="" />
+                <img  src={img1} alt="" />
               </SwiperSlide>
               <SwiperSlide>
                 <img src={img2} alt="" />
@@ -77,3 +78,6 @@ const Events = () => {
 };
 
 export default Events;
+
+
+
