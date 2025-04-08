@@ -53,10 +53,9 @@
     h2 {
       position: relative;
       // padding-left: calc((100vw - 1600px) / 2);
-      font-size: var(--font-size-heading);
-      font-weight: var(--font-weight-heading);
+    
       // line-height: var(--line-height-heading);
-      z-index: 90;
+      z-index: 0;
     }
   }
 
@@ -144,7 +143,7 @@
     right: 200px;
     display: flex;
     gap: 40px;
-    z-index: 4;
+    z-index: 99;
 
     @media #{$media-1600} {
       top: 10%;
@@ -189,7 +188,7 @@
       background: #805e59;
       color: white;
       cursor: pointer;
-      z-index: 95;
+      z-index: 999;
       transform: rotate(45deg);
       display: flex;
       justify-content: center;

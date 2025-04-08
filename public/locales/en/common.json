@@ -6,7 +6,8 @@
     "corporate_events": "Corporate Events",
     "media_center": "Media Center",
     "contact_us": "Contact Us",
-    "book_now": "Book Now"
+    "book_now": "Book Now",
+    "become_member": "Became a Member"
   },
 
   "hero": {
@@ -92,55 +93,136 @@
     "btn_text": "Get in Touch"
   },
 
-  "night_golf" : {
-    "heading" : "Night Golf",
-    "para" : "Experience golf like never before with Night Golf! Play all 18 holes, fully lit up, and enjoy the thrill of the game under the stars. Open every night from 7 PM, our course offers a unique way to  unwind and challenge yourself after dark. Grab your clubs and tee off into the night – the perfect blend of sport and adventure awaits!",
-    "btn_text" : "Book Now"
+  "night_golf": {
+    "heading": "Night Golf",
+    "para": "Experience golf like never before with Night Golf! Play all 18 holes, fully lit up, and enjoy the thrill of the game under the stars. Open every night from 7 PM, our course offers a unique way to  unwind and challenge yourself after dark. Grab your clubs and tee off into the night – the perfect blend of sport and adventure awaits!",
+    "btn_text": "Book Now"
   },
 
-  "health_and_wellness" : {
-    "heading" : "Health and wellness",
-    "para" : "Our club offers an exceptional experience for its members, featuring diverse dining options, gym, and a luxurious locker room with a jacuzzi and shower area. Riyadh Golf Club is the perfect destination for enjoying time with family and friends."
+  "health_and_wellness": {
+    "heading": "Health and wellness",
+    "para": "Our club offers an exceptional experience for its members, featuring diverse dining options, gym, and a luxurious locker room with a jacuzzi and shower area. Riyadh Golf Club is the perfect destination for enjoying time with family and friends."
   },
 
-  "dining" : {
-    "heading" : "Dining",
-    "para" : "Enjoy a relaxed meal at our clubhouse dining area, where casual dining meets exceptional service. Open Tuesday to Thursday from 6 AM to 10 PM, our menu offers a variety of delightful options. For your convenience, our beverage cart is available from 6 AM to 6 PM. Come savor delicious food and refreshing drinks in a welcoming atmosphere."
+  "dining": {
+    "heading": "Dining",
+    "para": "Enjoy a relaxed meal at our clubhouse dining area, where casual dining meets exceptional service. Open Tuesday to Thursday from 6 AM to 10 PM, our menu offers a variety of delightful options. For your convenience, our beverage cart is available from 6 AM to 6 PM. Come savor delicious food and refreshing drinks in a welcoming atmosphere."
   },
 
   "padel": {
-  "heading": "Padel",
-  "para": "Experience the excitement of Padel Tennis at our state-of-the-art courts! Perfect for up to four players, our courts are available for booking sessions.",
-  "sunday": "Sunday",
-  "monday": "Monday",
-  "time": "from 12 PM to 8 PM",
-  "60min": "60 Minutes",
-  "90min": "90 Minutes",
-  "120min": "120 Minutes",
-  "price_60": "175 SAR",
-  "price_90": "235 SAR",
-  "price_120": "295 SAR",
-  "book_button": "Contact us to Book"
-},
-"proshop" : {
-  "heading" : "Pro Shop",
-  "para" : "Pro shop offers a wide range of high-quality equipment and accessories to meet the needs of all players, from beginners to professionals. Whether you need clubs, equipment, accessories, or high-quality apparel from the Callaway brand, we have everything to help improve  your performance on the course. In addition, our professional club fitting services ensure optimal performance tailored to your needs. Visit us to experience top-quality gear and expert advice that will elevate your golf experience."
-},
+    "heading": "Padel",
+    "para": "Experience the excitement of Padel Tennis at our state-of-the-art courts! Perfect for up to four players, our courts are available for booking sessions.",
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "time": "from 12 PM to 8 PM",
+    "60min": "60 Minutes",
+    "90min": "90 Minutes",
+    "120min": "120 Minutes",
+    "price_60": "175 SAR",
+    "price_90": "235 SAR",
+    "price_120": "295 SAR",
+    "book_button": "Contact us to Book"
+  },
+  "proshop": {
+    "heading": "Pro Shop",
+    "para": "Pro shop offers a wide range of high-quality equipment and accessories to meet the needs of all players, from beginners to professionals. Whether you need clubs, equipment, accessories, or high-quality apparel from the Callaway brand, we have everything to help improve  your performance on the course. In addition, our professional club fitting services ensure optimal performance tailored to your needs. Visit us to experience top-quality gear and expert advice that will elevate your golf experience."
+  },
 
-"exp_share" :{
-  "heading" : "Share and Get Inspired"
-},
+  "exp_share": {
+    "heading": "Share and Get Inspired"
+  },
 
-"membership_badge": {
-  "explore": "Explore our Memberships",
-  "premium_joint": "Premium Joint",
-  "premium": "Premium",
-  "midweek": "Midweek"
-}
+  "membership_badge": {
+    "explore": "Explore our Memberships",
+    "premium_joint": "Premium Joint",
+    "premium": "Premium",
+    "midweek": "Midweek"
+  },
 
+  "joint_membership": {
+    "heading": "Joint Premium Memberships",
+    "family_premium": "Joint Family Premium",
+    "couple_premium": "Joint Couple Premium",
+    "corporate_premium": "Corporate Joint Premium"
+  },
+  "premium_membership": {
+    "heading": "Premium Memberships",
+    "family_premium": "Family Premium",
+    "couple_premium": "Couple Premium",
+    "single_premium": "Single Premium"
+  },
+  "midweek_membership": {
+    "heading": "Midweek Membership",
+    "family_midweek": "Family Midweek",
+    "couple_midweek": "Couple Midweek",
+    "single_midweek": "Single Midweek",
+    "corporate": "Corporate"
+  },
+  "membershipForm": {
+    "heading": " RGC Membership Inquiries",
+    "para": "Please fill out the form below to learn more about becoming a member at Riyadh Golf Club.",
+    "full_name": "Full Name",
+    "last_name": "Last Name",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "membership_type": "Types of Membership",
+    "single": "Single",
+    "family": "Family",
+    "comments": "Comments",
+    "btn_text": "Submit"
+  },
 
-
-
-
-
+  "media_list": {
+    "tournaments": "Tournaments",
+    "news": "News",
+    "gallery": "Gallery"
+  },
+  "upcoming_tournaments": {
+    "heading": "Upcoming tournaments",
+    "buttons": {
+      "buy_tickets": "Buy Tickets",
+      "volunteer": "Become a volunteer"
+    },
+    "tournament1": {
+      "title": "2023 PIF Saudi International powered by SoftBank Investment Advisers",
+      "date": "December 4th – 7th, 2024",
+      "location": "Riyadh Golf Club",
+      "prize": "USD $5million"
+    },
+    "tournament2": {
+      "title": "Another Tournament Title",
+      "date": "January 10th – 15th, 2025",
+      "location": "Jeddah Golf Club",
+      "prize": "USD $3.5million"
+    }
+  },
+  "past_tournaments": {
+    "heading": "Past tournaments",
+    "year_heading": "2022's Tournaments",
+    "label1": "Charley Hull Aramco team series champion",
+    "label2": "John Catlin Saudi Open champion",
+    "label3": "Alison Lee Aramco team series champion",
+    "label4": "Denwit Boriboonsub Saudi open champion",
+    "label5": "Othman Al Mulla won men's Gold Medal in Saudi games"
+  },
+  "contact": {
+    "heading_1": "Get in touch with us",
+    "para_1": "Questions, comments, or suggestions? Simply fill in the form and we’ll be in touch shortly.",
+    "address": "P.O. Box 84329 Riyadh 11671 Kingdom of Saudi Arabia",
+    "phone_1": "+966 (0) 55 739 9900",
+    "mail_1": "reception@riyadhgolf.com",
+    "heading_2": "Together we build trust",
+    "para_2": "Use the below contact info to speak up form to share any suggestions or concerns to help us maintain a positive and transparent workplace",
+    "phone_2": "+966 (0) 00 000 0000",
+    "mail_2": "whistleblow@riyadhgolf.com",
+    "btn_text" : "Speak Up"
+  },
+  "form": {
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "phone": "Phone number",
+    "message": "Message",
+    "btn_text": "Submit"
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "@/styles/components/padel.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFlip, Autoplay } from "swiper/modules";
@@ -6,22 +6,17 @@ import "swiper/css";
 import "swiper/css/effect-flip";
 import "swiper/css/autoplay";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
+import Image from "next/image";
 
 const Padel = () => {
   const { t, i18n } = useTranslation("common");
-  const swiperRef = useRef(null);
+  
   const [direction, setDirection] = useState("ltr");
 
   useEffect(() => {
     const newDirection = i18n.language === "ar" ? "rtl" : "ltr";
     setDirection(newDirection);
-
-    if (swiperRef.current) {
-      setTimeout(() => {
-        swiperRef.current.rtlTranslate = newDirection === "rtl";
-        swiperRef.current.update();
-      }, 300);
-    }
   }, [i18n.language]);
 
   return (
@@ -43,9 +38,7 @@ const Padel = () => {
               dir={direction}
               speed={3000}
               loop
-              onSwiper={(swiper) => {
-                swiperRef.current = swiper;
-              }}
+              data-aos="fade-up"
             >
               <SwiperSlide>
                 <img src={img1} alt="" />
@@ -58,34 +51,36 @@ const Padel = () => {
         </div>
         <div className={style.right_timing_container}>
           <div>
-            <h2 className="section_heading">{t("padel.heading")}</h2>
+            <h2 className="section_heading" data-aos="fade-up">{t("padel.heading")}</h2>
           </div>
 
-          <div>
+          <div data-aos="fade-up">
             <p className="para">{t("padel.para")}</p>
           </div>
 
-          <ul className={style.timing_table}>
+          <ul className={style.timing_table} data-aos="fade-up">
             <li>
               <div>
-                <div className={style.block}>
+                <div className={style.block} data-aos="fade-up">
                   <img src="/clock.svg" alt="" />
                   <p>
-                    <span>{t("padel.sunday")}</span> to <span>{t("padel.monday")}</span> <br />
+                    <span>{t("padel.sunday")}</span> to{" "}
+                    <span>{t("padel.monday")}</span> <br />
                     {t("padel.time")}
                   </p>
                 </div>
-                <div className={style.block}>
+                <div className={style.block} data-aos="fade-up">
                   <img
                     src="/timing_center.svg"
                     alt=""
                     style={{ width: "15px", margin: "auto" }}
                   />
                 </div>
-                <div className={style.block}>
+                <div className={style.block} data-aos="fade-up">
                   <img src="/clock.svg" alt="" />
                   <p>
-                    <span>{t("padel.sunday")}</span> to <span>{t("padel.monday")}</span> <br />
+                    <span>{t("padel.sunday")}</span> to{" "}
+                    <span>{t("padel.monday")}</span> <br />
                     {t("padel.time")}
                   </p>
                 </div>
@@ -93,7 +88,7 @@ const Padel = () => {
             </li>
 
             <li>
-              <div>
+              <div data-aos="fade-up">
                 <p>
                   {t("padel.60min")} <br />
                   <span>{t("padel.price_60")}</span>
@@ -101,7 +96,7 @@ const Padel = () => {
               </div>
             </li>
             <li>
-              <div>
+              <div data-aos="fade-up">
                 <p>
                   {t("padel.90min")} <br />
                   <span>{t("padel.price_90")}</span>
@@ -109,7 +104,7 @@ const Padel = () => {
               </div>
             </li>
             <li>
-              <div>
+              <div data-aos="fade-up">
                 <p>
                   {t("padel.120min")} <br />
                   <span>{t("padel.price_120")}</span>
@@ -118,27 +113,21 @@ const Padel = () => {
             </li>
           </ul>
 
-          <button className="dark_button" data-aos="fade-up">
-            <p>{t("padel.book_button")}</p>
-            <div className="button_round">
-              <svg
-                width="11"
-                height="17"
-                viewBox="0 0 11 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.3731 8.95553L9.41344 8.07654L1.57473 0.910156L0.650452 1.75385L8.46127 8.94713L0.680212 16.0614L1.61007 16.9102L9.41716 9.82444L9.41902 9.8278L10.3731 8.95553Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M6 8.91002L-9.66342e-08 14.1062L3.57628e-07 3.71387L6 8.91002Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-          </button>
+          <Link
+            href="#"
+            className="dark_button"
+            data-aos="fade-up"
+          >
+            <label>{t("night_golf.btn_text")}</label>
+            <span>
+              <Image
+                src="/btn_icon.png"
+                width={70}
+                height={70}
+                alt="button image"
+              />
+            </span>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,8 @@
 import React from "react";
 import footerStyle from "@/styles/components/footer.module.scss";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const { t } = useTranslation("common");
@@ -10,37 +12,34 @@ const Footer = () => {
       <div className={footerStyle.sub_conatiner}>
         <div className={footerStyle.footer_top}>
           <div>
-            <h4>{t("footer.newsletter_title")}</h4>
-            <p>{t("footer.newsletter_subtitle")}</p>
+            <h4 data-aos="fade-up">{t("footer.newsletter_title")}</h4>
+            <p data-aos="fade-up">{t("footer.newsletter_subtitle")}</p>
           </div>
-          <form>
-            <div className={footerStyle.news_letter}>
-              <input type="email" placeholder={t("footer.email_placeholder")} />
-              <button className="dark_button">
-                <p>{t("footer.subscribe_btn")}</p>
-                <div className="button_round">
-                  <svg
-                    viewBox="0 0 11 17"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.3731 8.95553L9.41344 8.07654L1.57473 0.910156L0.650452 1.75385L8.46127 8.94713L0.680212 16.0614L1.61007 16.9102L9.41716 9.82444L9.41902 9.8278L10.3731 8.95553Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M6 8.91002L-9.66342e-08 14.1062L3.57628e-07 3.71387L6 8.91002Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </div>
-              </button>
+          <form data-aos="fade-up">
+            <div className={footerStyle.news_letter} data-aos="fade-up">
+              <input type="email" placeholder={t("footer.email_placeholder")} data-aos="fade-up"/>
+              <Link
+                href="#"
+                className="dark_button"
+                data-aos="fade-up"
+                data-aos-duration="700"
+              >
+                <label>{t("footer.subscribe_btn")}</label>
+                <span>
+                  <Image
+                    src="/btn_icon.png"
+                    width={70}
+                    height={70}
+                    alt="button image"
+                  />
+                </span>
+              </Link>
             </div>
           </form>
         </div>
 
-        <div className={footerStyle.decor_container}>
-          <img src="./footer_decor.png" alt="footer decoration" />
+        <div className={footerStyle.decor_container} data-aos="fade-up">
+          <img src="/footer_decor.png" alt="footer decoration" />
         </div>
 
         <div className={footerStyle.footer_bottom}>

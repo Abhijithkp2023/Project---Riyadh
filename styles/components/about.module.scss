@@ -5,7 +5,6 @@
   overflow: hidden;
   position: relative;
 
-
   &::before,
   &::after {
     content: "";
@@ -20,8 +19,8 @@
     left: 0;
     width: 110px;
     height: 100%;
-    background-image: url('/about_decor_left.png');
-    
+    background-image: url("/about_decor_left.png");
+
     @media #{$media-700} {
       display: none;
     }
@@ -31,15 +30,12 @@
     right: 0;
     width: 55px;
     height: 902px;
-    background-image: url('/about_decor_right.png');
+    background-image: url("/about_decor_right.png");
 
     @media #{$media-700} {
       width: 30px;
     }
   }
-
-
-
 
   .about_sub_container {
     @include center;
@@ -52,28 +48,16 @@
     padding-left: 7%;
     padding-right: 7%;
     text-align: center;
-   
 
     h2 {
-      font-size: var(--font-size-heading);
-      font-weight: var(--font-weight-heading);
-      line-height: var(--line-height-heading);
       max-width: 1266px;
       margin-left: auto;
       margin-right: auto;
-     
-
-      
     }
 
     p {
-      font-size: var(--font-size-para);
-      font-weight: var(--font-weight-para);
-      line-height: var(--line-height-para);
       max-width: 1266px;
-      
     }
-
 
     @media #{$media-700} {
       gap: 20px;
@@ -82,7 +66,3 @@
     }
   }
 }
-
-
-
-

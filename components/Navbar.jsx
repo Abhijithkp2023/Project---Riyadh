@@ -55,7 +55,9 @@ const Navbar = () => {
       >
         <div>
           <div className={navStyle.logo_container}>
-            <Link href="/"><img src="/nav_logo.svg" alt="" /></Link>
+            <Link href="/">
+              <img src="/nav_logo.svg" alt="" />
+            </Link>
           </div>
           <ul className={navStyle.links_container}>
             <li className="underline_fill">
@@ -70,8 +72,8 @@ const Navbar = () => {
             <li className="underline_fill">
               <Link href="/tournaments">{t("nav.corporate_events")}</Link>
             </li>
-            <li className="underline_fill">{t("nav.media_center")}</li>
-            <li className="underline_fill"> 
+            <li className="underline_fill"><Link href="/gallery">{t("nav.media_center")}</Link></li>
+            <li className="underline_fill">
               <Link href="/contact"> {t("nav.contact_us")}</Link>
             </li>
           </ul>
@@ -100,25 +102,34 @@ const Navbar = () => {
       >
         <ul>
           <li className="underline_fill">
-            <Link href={"/experience"}>{t("nav.exp")}</Link>
+            <Link onClick={handleSideBar} href={"/experience"}>
+              {t("nav.exp")}
+            </Link>
           </li>
           <li className="underline_fill">
-            <Link href="/membership">{t("nav.membership")}</Link>
+            <Link onClick={handleSideBar} href="/membership">
+              {t("nav.membership")}
+            </Link>
           </li>
           <li className="underline_fill">
-            <a href="#">{t("nav.learn_to_play")}</a>
+            <Link onClick={handleSideBar} href="member">
+              {t("nav.learn_to_play")}
+            </Link>
           </li>
           <li className="underline_fill">
-            <a href="#">{t("nav.corporate_events")}</a>
+            <Link onClick={handleSideBar} href="/tournaments">
+              {t("nav.corporate_events")}
+            </Link>
           </li>
           <li className="underline_fill">
-            <a href="#">{t("nav.media_center")}</a>
+            <Link onClick={handleSideBar} href="/gallery">
+              {t("nav.media_center")}
+            </Link>
           </li>
           <li className="underline_fill">
-            <li className="underline_fill">
-              {" "}
-              <Link href="/contact"> {t("nav.contact_us")}</Link>
-            </li>
+            <Link onClick={handleSideBar} href="/contact">
+              {t("nav.contact_us")}
+            </Link>
           </li>
         </ul>
         <IoMdClose

@@ -58,7 +58,7 @@ const News = () => {
           </div>
         </div>
 
-        <div className={`${style.news_bottom} pb_100`}>
+        <div className={`${style.news_bottom} pb_100`} data-aos="fade-up">
           <ul className={style.news_list_container}>
             {newsData.map((newsItem) => (
               <li key={newsItem.id} className={style.news}>

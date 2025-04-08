@@ -10,22 +10,13 @@ import "swiper/css/autoplay";
 import { useTranslation } from "react-i18next";
 
 const Media = () => {
-  const swiperRef = useRef(null);
-   const [direction, setDirection] = useState("ltr");
+  const [direction, setDirection] = useState("ltr");
   const { t, i18n } = useTranslation("common");
 
-   useEffect(() => {
-      const newDirection = i18n.language === "ar" ? "rtl" : "ltr";
-      setDirection(newDirection);
-  
-      if (swiperRef.current) {
-        setTimeout(() => {
-          swiperRef.current.rtlTranslate = newDirection === "rtl";
-          swiperRef.current.update();
-        }, 300);
-      }
-    }, [i18n.language]);
-  
+  useEffect(() => {
+    const newDirection = i18n.language === "ar" ? "rtl" : "ltr";
+    setDirection(newDirection);
+  }, [i18n.language]);
 
   return (
     <div className={`${mediaStyle.media_container} pt_180 pb_180`}>
@@ -209,17 +200,20 @@ const Media = () => {
         </div>
 
         <Swiper
-        key={direction}
+          key={direction}
           spaceBetween={500}
           slidesPerView={1}
           autoplay={{
             delay: 1500,
             disableOnInteraction: false,
           }}
-           dir={direction}
+          dir={direction}
           // pagination={{ clickable: true }}
           loop={true}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          navigation={{
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+          }}
           modules={[Navigation, Autoplay]}
           speed={1000}
           className={mediaStyle.slider_container}
@@ -297,25 +291,24 @@ const Media = () => {
         </Swiper>
 
         <div className={mediaStyle.button_container}>
-        
-           <button
-            className={mediaStyle.swiper_button_right}
-             onClick={() => swiperRef.current?.slideNext()}
+          <button
+            className={`${mediaStyle.swiper_button_right}  custom-prev`}
+            //  onClick={() => swiperRef.current?.slideNext()}
           >
             <div className="">
               <img src="./arrow_big.svg" />
             </div>
           </button>
-           
+
           <button
-            className={mediaStyle.swiper_button_left}
-           
-            onClick={() => swiperRef.current?.slidePrev()}
+            className={`${mediaStyle.swiper_button_left} custom-next`}
+
+            // onClick={() => swiperRef.current?.slidePrev()}
           >
             <div className="">
               <img src="./arrow_big.svg" />
             </div>
-          </button> 
+          </button>
         </div>
       </div>
     </div>

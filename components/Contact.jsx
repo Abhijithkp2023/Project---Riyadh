@@ -1,134 +1,128 @@
 import React from "react";
 import style from "@/styles/components/contact.module.scss";
+import { useTranslation } from "react-i18next";
+import Link from "next/link";
+import Image from "next/image";
 
 const Contact = () => {
+  const { t } = useTranslation("common");
+
   return (
     <div className={style.container}>
       <div className={`${style.wrapper} pb_100 pt_100`}>
         <div className={style.contact_top}>
           <div className={style.address}>
-            <h2 className="section_heading"> Get in touch with us</h2>
-            <p className="para">
-              Questions, comments, or suggestions? Simply fill in the form and
-              we’ll be in touch shortly.
+            <h2 className="section_heading" data-aos="fade-up">
+              {t("contact.heading_1")}
+            </h2>
+            <p className="para" data-aos="fade-up">
+              {t("contact.para_1")}
             </p>
 
             <ul className={style.address_list}>
               <li className={style.contact}>
-                <div className={style.icon}>
-                  <img src="/map.svg" alt="" />
+                <div className={style.icon} data-aos="fade-up">
+                  <img src="/map.svg" alt="map" />
                 </div>
-                <p className="para">
-                  P.O. Box 84329 Riyadh 11671 <br />
-                  Kingdom of Saudi Arabia
+                <p className="para" data-aos="fade-up">
+                  {t("contact.address")}
                 </p>
               </li>
               <li className={style.contact}>
-                <div className={style.icon}>
-                  <img src="/call.svg" alt="" />
+                <div className={style.icon} data-aos="fade-up">
+                  <img src="/call.svg" alt="call" />
                 </div>
-                <p className="para">+966 (0) 55 739 9900</p>
+                <p className="para" data-aos="fade-up">
+                  {t("contact.phone_1")}
+                </p>
               </li>
               <li className={style.contact}>
-                <div className={style.icon}>
-                  <img src="/mail.svg" alt="" />
+                <div className={style.icon} data-aos="fade-up">
+                  <img src="/mail.svg" alt="mail" />
                 </div>
-                <p className="para">reception@riyadhgolf.com</p>
+                <p className="para" data-aos="fade-up">
+                  {t("contact.mail_1")}
+                </p>
               </li>
             </ul>
           </div>
 
           <form className={style.form}>
             <ul className={style.form_list}>
-              <li className={style.name}>
+              <li className={style.name} data-aos="fade-up">
                 <input
                   type="text"
-                  placeholder="First Name"
+                  placeholder={t("form.first_name")}
                   className={style.first_name}
                 />
                 <input
                   type="text"
-                  placeholder="Last Name"
+                  placeholder={t("form.last_name")}
                   className={style.last_name}
                 />
               </li>
-              <li>
-                <input type="email" placeholder="Email" />
+              <li data-aos="fade-up">
+                <input type="email" placeholder={t("form.email")} />
               </li>
-              <li>
-                <input type="number" placeholder="Phone number" />
+              <li data-aos="fade-up">
+                <input type="number" placeholder={t("form.phone")} />
               </li>
-              <li>
-                <textarea placeholder="Message"></textarea>
-              </li>
-              <li>
-                <button className="dark_button" data-aos="fade-up">
-                  <p>Submit</p>
-                  <div className="button_round">
-                    <svg
-                      width="11"
-                      height="17"
-                      viewBox="0 0 11 17"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10.3731 8.95553L9.41344 8.07654L1.57473 0.910156L0.650452 1.75385L8.46127 8.94713L0.680212 16.0614L1.61007 16.9102L9.41716 9.82444L9.41902 9.8278L10.3731 8.95553Z"
-                        fill="currentColor"
-                      />
-                      <path
-                        d="M6 8.91002L-9.66342e-08 14.1062L3.57628e-07 3.71387L6 8.91002Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                </button>
+              <li data-aos="fade-up">
+                <textarea placeholder={t("form.message")}></textarea>
               </li>
             </ul>
+            <Link href="#" className="dark_button" data-aos="fade-up">
+              <label>{t("contact.btn_text")}</label>
+              <span>
+                <Image
+                  src="/btn_icon.png"
+                  width={70}
+                  height={70}
+                  alt="button image"
+                />
+              </span>
+            </Link>
           </form>
         </div>
 
         <div className={style.contact_bottom}>
-          <h2 className="section_heading">Together we build trust</h2>
-          <p className="para">
-            Use the below contact info to speak up form to share any suggestions
-            or concerns to help us maintain a positive and transparent workplace
+          <h2 className="section_heading" data-aos="fade-up">
+            {t("contact.heading_2")}
+          </h2>
+          <p className="para" data-aos="fade-up">
+            {t("contact.para_2")}
           </p>
+
           <ul className={style.bottom_list}>
-            <li>
-              <button className="dark_button">
-                <p>Submit</p>
-                <div className="button_round">
-                  <svg
-                    width="11"
-                    height="17"
-                    viewBox="0 0 11 17"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.3731 8.95553L9.41344 8.07654L1.57473 0.910156L0.650452 1.75385L8.46127 8.94713L0.680212 16.0614L1.61007 16.9102L9.41716 9.82444L9.41902 9.8278L10.3731 8.95553Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M6 8.91002L-9.66342e-08 14.1062L3.57628e-07 3.71387L6 8.91002Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </div>
-              </button>
+            <li data-aos="fade-up">
+              <Link
+                href="#"
+                className="dark_button"
+                data-aos="fade-up"
+                data-aos-duration="700"
+              >
+                <label>{t("contact.btn_text")}</label>
+                <span>
+                  <Image
+                    src="/btn_icon.png"
+                    width={70}
+                    height={70}
+                    alt="button image"
+                  />
+                </span>
+              </Link>
             </li>
-            <li className={style.contact}>
+            <li className={style.contact} data-aos="fade-up">
               <div className={style.icon}>
-                <img src="/call.svg" alt="" />
+                <img src="/call.svg" alt="call" />
               </div>
-              <p className="para">+966 (0) 00 000 0000</p>
+              <p className="para">{t("contact.phone_2")}</p>
             </li>
-            <li className={style.contact}>
+            <li className={style.contact} data-aos="fade-up">
               <div className={style.icon}>
-                <img src="/mail.svg" alt="" />
+                <img src="/mail.svg" alt="mail" />
               </div>
-              <p className="para">whistleblow@riyadhgolf.com</p>
+              <p className="para">{t("contact.mail_2")}</p>
             </li>
           </ul>
         </div>

@@ -2,8 +2,10 @@ import Contact from '@/components/Contact'
 import HeroBanner from '@/components/HeroBanner'
 import Head from 'next/head'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const contact = () => {
+  const  {t} = useTranslation("common")
   return (
     <>
     <Head>
@@ -13,7 +15,7 @@ const contact = () => {
 
     <HeroBanner
       imageUrl="/contact_hero_bg.png"
-      title="Contact Us"
+      title={t("nav.contact_us")}
     />
     {/* <About content={aboutMembership} /> */}
     <Contact />

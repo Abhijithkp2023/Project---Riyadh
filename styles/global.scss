@@ -75,23 +75,6 @@ body {
   }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-  only screen and (min-resolution: 144dpi) {
-  html {
-    font-size: 12px;
-
-    @media (max-width: 1600px) {
-      font-size: 80%;
-    }
-    @media (max-width: 1280px) {
-      font-size: 60%;
-    }
-    @media (max-width: 700px) {
-      font-size: 40%;
-    }
-  }
-}
-
 html {
   font-size: 16px;
 }
@@ -132,6 +115,8 @@ html {
   }
 }
 
+
+
 ul,
 ol {
   list-style: none;
@@ -156,423 +141,26 @@ a {
   font-weight: 400;
   line-height: 27px;
 
+  @media #{$media-1600} {
+    font-size: 14px;
+  }
+
   @media #{$media-1200} {
     line-height: 22px;
   }
 
-  @media #{$media-1600} {
-    font-size: 14px;
-  }
+  // @media (min-width: 1200px), (min-width: 960px) and (-webkit-device-pixel-ratio: 1.5625) {
+  //   font-size: 14px;
+  // }
+
+
+  //  @media (min-width: 1200px), (min-width: 960px) and (-webkit-device-pixel-ratio: 1.5625) {
+  //   font-size: 14px;
+  // }
+  
 }
 
-// -------------- light backgorund && dark text button ---------------
 
-.light_button {
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  height: 48px;
-  border: none;
-  border-radius: 30px;
-  padding: 0px 12px 0px 12px;
-  color: $dark_color;
-  width: fit-content;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-
-  p {
-    font-size: 16px;
-    font-weight: 400;
-    z-index: 2;
-  }
-
-  div.button_round {
-    height: 38px;
-    width: 38px;
-    border-radius: 19px;
-    @include center;
-    background-color: $dark-color;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    // div {
-    //   height: 16px;
-    //   width: 10px;
-    //   background-color: yellow;
-
-    svg {
-      color: white;
-      height: 55%;
-      width: auto;
-
-      [dir="rtl"] {
-        transform: rotate(180deg);
-        background: yellow;
-      }
-      // }
-    }
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: darken($dark-color, 3%);
-    transition: width 0.5s ease;
-    z-index: 1;
-  }
-
-  &:hover::before {
-    width: 100%;
-  }
-
-  &:hover p {
-    color: white;
-  }
-
-  @media #{$media-820} {
-    height: 40px;
-    padding: 0px 12px 0px 12px;
-
-    p {
-      font-size: 14px;
-    }
-
-    div.button_round {
-      height: 30px;
-      width: 30px;
-    }
-  }
-
-  @media (min-resolution: 144dpi) {
-    height: 40px;
-
-    div.button_round {
-      height: 32px;
-      width: 32px;
-    }
-  }
-
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (min-resolution: 144dpi) {
-    height: 40px;
-
-    div.button_round {
-      height: 32px;
-      width: 32px;
-    }
-
-    @media (max-width: 1600px) {
-      height: 38px;
-
-      div.button_round {
-        height: 30px;
-        width: 30px;
-      }
-    }
-    @media (max-width: 700px) {
-      height: 30px;
-
-      div.button_round {
-        height: 25px;
-        width: 25px;
-      }
-    }
-  }
-}
-
-// -------------------------- dark button - background dark color  && white text---------
-
-.dark_button {
-  background: $dark-color;
-  display: flex;
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  height: 48px;
-  border: none;
-  border-radius: 30px;
-  padding: 0px 12px 0px 12px;
-  color: white;
-  width: fit-content;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-
-  p {
-    font-size: 16px;
-    font-weight: 400;
-    z-index: 2;
-    transition: color 0.2 ease;
-  }
-
-  div.button_round {
-    height: 38px;
-    width: 38px;
-    border-radius: 19px;
-    @include center;
-    background-color: #f5ede633;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    // div {
-    //   height: 16px;
-    //   width: 10px;
-
-    svg {
-      color: white;
-      height: 55%;
-      width: auto;
-      [dir="rtl"] {
-        transform: rotate(180deg);
-      }
-    }
-    // }
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: darken($dark-color, 3%);
-    transition: width 0.5s ease;
-    z-index: 1;
-  }
-
-  &:hover::before {
-    width: 100%;
-    color: white;
-  }
-
-  @media #{$media-820} {
-    height: 40px;
-    padding: 0px 12px 0px 12px;
-
-    p {
-      font-size: 14px;
-    }
-
-    div.button_round {
-      height: 30px;
-      width: 30px;
-    }
-  }
-
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (min-resolution: 144dpi) {
-    height: 40px;
-
-    div.button_round {
-      height: 32px;
-      width: 32px;
-    }
-
-    @media (max-width: 1600px) {
-      height: 38px;
-
-      div.button_round {
-        height: 30px;
-        width: 30px;
-      }
-    }
-    @media (max-width: 700px) {
-      height: 30px;
-
-      div.button_round {
-        height: 25px;
-        width: 25px;
-      }
-    }
-  }
-}
-
-// --------  button with white transparent backgorund ------------
-
-.transparent_button {
-  background: rgba($color: #ffffff, $alpha: 0.2);
-  backdrop-filter: blur(19.3px);
-  display: flex;
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  height: 48px;
-  border: none;
-  border-radius: 30px;
-  padding: 0px 15px 0px 15px;
-  color: white;
-  width: fit-content;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-
-  p {
-    font-size: 16px;
-    font-weight: 400;
-    z-index: 1;
-  }
-
-  div.button_round {
-    height: 38px;
-    width: 38px;
-    border-radius: 19px;
-    @include center;
-    background-color: rgba($color: #f5ede633, $alpha: 0.2);
-    z-index: 1;
-
-    svg {
-      color: white;
-      height: 55%;
-      width: auto;
-      [dir="rtl"] {
-        transform: rotate(180deg);
-      }
-    }
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: rgba($color: #ffffff, $alpha: 0.3);
-    transition: width 0.5s ease;
-    z-index: 0;
-  }
-
-  &:hover::before {
-    width: 100%;
-  }
-
-  @media #{$media-820} {
-    height: 40px;
-    padding: 0px 12px 0px 12px;
-
-    p {
-      font-size: 14px;
-    }
-
-    div.button_round {
-      height: 30px;
-      width: 30px;
-    }
-  }
-
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (min-resolution: 144dpi) {
-    height: 40px;
-
-    div.button_round {
-      height: 32px;
-      width: 32px;
-    }
-
-    @media (max-width: 1600px) {
-      height: 38px;
-
-      div.button_round {
-        height: 30px;
-        width: 30px;
-      }
-    }
-    @media (max-width: 700px) {
-      height: 30px;
-
-      div.button_round {
-        height: 25px;
-        width: 25px;
-      }
-    }
-  }
-}
-
-// --------------- button with no white background for news --------
-
-.read_more_button {
-  background: rgba($color: #ffffff, $alpha: 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  gap: 8px;
-  height: 24px;
-  border: none;
-  color: #574547;
-  width: fit-content;
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateX(5px);
-  }
-
-  p {
-    font-size: 15px;
-    font-weight: 400;
-  }
-
-  svg {
-    color: #574547;
-    width: 11px;
-    height: 17px;
-    display: block;
-    align-self: center;
-    transition: all 0.3s ease;
-  }
-
-  &:hover {
-    // p {
-    //   transform: scale(1.1);
-    // }
-    svg {
-      transform: scale(1.1);
-    }
-  }
-
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (min-resolution: 144dpi) {
-    height: 40px;
-
-    div.button_round {
-      height: 32px;
-      width: 32px;
-    }
-
-    @media (max-width: 1600px) {
-      height: 38px;
-
-      div.button_round {
-        height: 30px;
-        width: 30px;
-      }
-    }
-    @media (max-width: 700px) {
-      height: 30px;
-
-      div.button_round {
-        height: 25px;
-        width: 25px;
-      }
-    }
-  }
-}
 
 [dir="rtl"] .dark_button div.button_round svg,
 [dir="rtl"] .light_button div.button_round svg,
@@ -831,5 +419,432 @@ a {
 
   @media #{$media-820} {
     height: 568px;
-   }
+  }
+}
+
+.dark_button {
+  display: inline-flex;
+  height: 48px;
+  align-items: center;
+  border-radius: 50px;
+  width: max-content;
+  background: #805e59;
+  padding: 0 55px 0 25px;
+  gap: 40px;
+  color: #f5ede6;
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  justify-content: center;
+  cursor: pointer;
+
+  [dir="rtl"] & {
+    padding: 0 25px 0 55px;
+    flex-direction: row-reverse;
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+
+    @media #{$media-1600} {
+      font-size: 14px;
+    }
+
+    @media #{$media-1200} {
+      line-height: 22px;
+    }
+
+    @media (min-resolution: 150dpi), (-webkit-min-device-pixel-ratio: 1.5) {
+      font-size: 12px;
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(245, 237, 230, 0.2);
+    transition: var(--transition);
+    position: absolute;
+    z-index: 4;
+    right: 6px;
+
+    [dir="rtl"] & {
+      right: auto;
+      left: 6px;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+      min-height: 40%;
+      transition: transform 0.3s ease;
+
+      html[dir="rtl"] & {
+        transform: rotate(180deg);
+      }
+
+      @media #{$media-700} {
+        width: 11px;
+      }
+    }
+
+    @media #{$media-700} {
+      width: 33px;
+      height: 33px;
+    }
+  }
+
+  label {
+    position: relative;
+    z-index: 4;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+
+  &:after {
+    transition: all 0.4s ease-out 0s;
+    content: "";
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #744e48;
+
+    [dir="rtl"] & {
+      right: 0;
+    }
+  }
+
+  &:hover {
+    color: #fff;
+
+    &:after {
+      width: 100%;
+    }
+  }
+
+  @media #{$media-700} {
+    height: 38px;
+  }
+}
+
+.light_button {
+  display: inline-flex;
+  height: 48px;
+  align-items: center;
+  border-radius: 50px;
+  background: #f5ede6;
+  padding-left: 25px;
+  padding-right: 7px;
+  gap: 40px;
+  color: #574547;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding-right: 55px;
+  justify-content: center;
+  cursor: pointer;
+
+  [dir="rtl"] & {
+    padding: 0 25px 0 55px;
+    flex-direction: row-reverse;
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+
+    @media #{$media-1600} {
+      font-size: 14px;
+    }
+
+    @media #{$media-1200} {
+      line-height: 22px;
+    }
+
+    @media (min-resolution: 150dpi), (-webkit-min-device-pixel-ratio: 1.5) {
+      font-size: 12px;
+    }
+  }
+
+  span {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #83625d;
+    padding-left: 5px;
+    transition: var(--transition);
+    position: relative;
+    z-index: 4;
+
+    [dir="rtl"] & {
+      right: auto;
+      left: 6px;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+      min-height: 40%;
+
+      html[dir="rtl"] & {
+        transform: rotate(180deg);
+      }
+
+      @media #{$media-700} {
+        width: 11px;
+      }
+    }
+
+    position: absolute;
+    right: 6px;
+
+    @media #{$media-700} {
+      width: 33px;
+      height: 33px;
+    }
+  }
+
+  label {
+    position: relative;
+    z-index: 4;
+    cursor: pointer;
+  }
+
+  &:after {
+    transition: all 0.4s ease-out 0s;
+    -moz-transition: all 0.4s ease-out 0s;
+    -webkit-transition: all 0.4s ease-out 0s;
+    -o-transition: all 0.4s ease-out 0s;
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #744e48;
+
+    [dir="rtl"] & {
+      right: 0;
+    }
+  }
+
+  &:hover {
+    color: #fff;
+
+    &:after {
+      width: 100%;
+    }
+  }
+
+  @media #{$media-700} {
+    height: 38px;
+  }
+}
+
+.transparent_button {
+  display: inline-flex;
+  height: 48px;
+  align-items: center;
+  border-radius: 50px;
+  background: rgba($color: #ffffff, $alpha: 0.2);
+  backdrop-filter: blur(19.3px);
+  padding-left: 25px;
+  padding-right: 7px;
+  gap: 40px;
+  color: white;
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding-right: 55px;
+  justify-content: center;
+  cursor: pointer;
+
+  [dir="rtl"] & {
+    padding: 0 25px 0 55px;
+    flex-direction: row-reverse;
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+
+    @media #{$media-1600} {
+      font-size: 14px;
+    }
+
+    @media #{$media-1200} {
+      line-height: 22px;
+    }
+
+    @media (min-resolution: 150dpi), (-webkit-min-device-pixel-ratio: 1.5) {
+      font-size: 12px;
+    }
+  }
+
+  span {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba($color: #f5ede633, $alpha: 0.2);
+    padding-left: 5px;
+    transition: var(--transition);
+    position: relative;
+    z-index: 4;
+
+    [dir="rtl"] & {
+      right: auto;
+      left: 6px;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+      min-height: 40%;
+      html[dir="rtl"] & {
+        transform: rotate(180deg);
+      }
+
+      @media #{$media-700} {
+        width: 11px;
+      }
+    }
+
+    position: absolute;
+    right: 6px;
+
+    @media #{$media-700} {
+      width: 33px;
+      height: 33px;
+    }
+  }
+
+  label {
+    position: relative;
+    z-index: 4;
+    cursor: pointer;
+  }
+
+  &:after {
+    transition: all 0.4s ease-out 0s;
+    -moz-transition: all 0.4s ease-out 0s;
+    -webkit-transition: all 0.4s ease-out 0s;
+    -o-transition: all 0.4s ease-out 0s;
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba($color: #ffffff, $alpha: 0.3);
+
+    [dir="rtl"] & {
+      right: 0;
+    }
+  }
+
+  &:hover {
+    color: #fff;
+
+    &:after {
+      width: 100%;
+    }
+  }
+
+  @media #{$media-700} {
+    height: 38px;
+  }
+}
+
+.read_more_button {
+  background: rgba($color: #ffffff, $alpha: 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  gap: 8px;
+  height: 24px;
+  border: none;
+  color: #574547;
+  width: fit-content;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  svg {
+    color: #574547;
+    width: 11px;
+    height: 17px;
+    display: block;
+    align-self: center;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    // p {
+    //   transform: scale(1.1);
+    // }
+    svg {
+      transform: scale(1.1);
+    }
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (min-resolution: 144dpi) {
+    height: 40px;
+
+    div.button_round {
+      height: 32px;
+      width: 32px;
+    }
+
+    @media (max-width: 1600px) {
+      height: 38px;
+
+      div.button_round {
+        height: 30px;
+        width: 30px;
+      }
+    }
+    @media (max-width: 700px) {
+      height: 30px;
+
+      div.button_round {
+        height: 25px;
+        width: 25px;
+      }
+    }
+  }
 }

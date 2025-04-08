@@ -37,7 +37,8 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
@@ -58,10 +59,11 @@
 .logo_container {
   width: max(250px,30%);
   height: auto;
-  // background: yellow;
+  aspect-ratio: 2/1;
 
   img {
     display: block;
+    height: 100%;
     width: 100%;
     height: auto;
   }

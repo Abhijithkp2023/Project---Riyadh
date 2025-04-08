@@ -1,61 +1,72 @@
 import React from "react";
 import style from "@/styles/components/membershipForm.module.scss";
+import { useTranslation } from "react-i18next";
+import Link from "next/link";
+import Image from "next/image";
 
 const MembershipForm = () => {
+  const { t } = useTranslation("common");
+
   return (
     <div className={`${style.container} pb_100 pt_100`}>
       <div className={style.wrapper}>
         <div className={style.text_container}>
           <h2 className="section_heading" data-aos="fade-up">
-            RGC Membership Inquiries
+            {t("membershipForm.heading")}
           </h2>
           <p className="para" data-aos="fade-up">
-            Please fill out the form below to learn more about becoming a member
-            at Riyadh Golf Club.
+            {t("membershipForm.para")}
           </p>
         </div>
         <form className={style.form_container}>
-          <input type="text" placeholder="Full Name" data-aos="fade-up" />
-          <input type="text" placeholder="Last Name" data-aos="fade-up" />
-          <input type="number" placeholder="Phone Number" data-aos="fade-up" />
-          <input type="email" placeholder="Email Address" data-aos="fade-up" />
+          <input
+            type="text"
+            placeholder={t("membershipForm.full_name")}
+            data-aos="fade-up"
+          />
+          <input
+            type="text"
+            placeholder={t("membershipForm.last_name")}
+            data-aos="fade-up"
+          />
+          <input
+            type="number"
+            placeholder={t("membershipForm.phone")}
+            data-aos="fade-up"
+          />
+          <input
+            type="email"
+            placeholder={t("membershipForm.email")}
+            data-aos="fade-up"
+          />
           <select data-aos="fade-up">
             <option value="" disabled selected>
-              Types of membership
+              {t("membershipForm.membership_type")}
             </option>
-            <option value="">Single</option>
-            <option value="">Family</option>
+            <option value="">{t("membershipForm.single")}</option>
+            <option value="">{t("membershipForm.family")}</option>
           </select>
           <textarea
-            placeholder="Comments"
+            placeholder={t("membershipForm.comments")}
             rows="5"
             data-aos="fade-up"
           ></textarea>
-          <button
+
+          <Link
+            href="#"
             className="dark_button"
-            style={{ paddingLeft: "20px" }}
             data-aos="fade-up"
           >
-            <p data-aos="fade-up">Submit</p>
-            <div className="button_round" data-aos="fade-up">
-              <svg
-                width="11"
-                height="17"
-                viewBox="0 0 11 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.3731 8.95553L9.41344 8.07654L1.57473 0.910156L0.650452 1.75385L8.46127 8.94713L0.680212 16.0614L1.61007 16.9102L9.41716 9.82444L9.41902 9.8278L10.3731 8.95553Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M6 8.91002L-9.66342e-08 14.1062L3.57628e-07 3.71387L6 8.91002Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-          </button>
+            <label>{t("membershipForm.btn_text")}</label>
+            <span>
+              <Image
+                src="/btn_icon.png"
+                width={70}
+                height={70}
+                alt="button image"
+              />
+            </span>
+          </Link>
         </form>
       </div>
     </div>

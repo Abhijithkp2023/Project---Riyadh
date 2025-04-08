@@ -12,19 +12,19 @@ const MembershipBadge = () => {
         <h3 className={style.heading}>{t("membership_badge.explore")}</h3>
 
         <ul className={style.list}>
-          <li>
+          <li data-aos="fade-up">
             <Link href="#">
               <span className="para">
                 {t("membership_badge.premium_joint")}
               </span>
             </Link>
           </li>
-          <li>
+          <li data-aos="fade-up">
             <Link href="#">
               <span className="para">{t("membership_badge.premium")}</span>
             </Link>
           </li>
-          <li>
+          <li data-aos="fade-up">
             <Link href="#">
               <span className="para">{t("membership_badge.midweek")}</span>
             </Link>

@@ -7,7 +7,7 @@
   left: 50%;
   margin-top: 0px;
   transform: translate(-50%);
-  z-index: 99;
+  z-index: 999;
   display: flex;
   width: 100%;
   transition: all 0.5s ease;
@@ -188,18 +188,7 @@
 
     }
 
-    // button a {
-    //   font-size: 16px;
-    //   font-weight: 500;
-    //   line-height: 29px;
-    //   color: white;
-
-    //   @media #{$media-1024} {
-    //     font-size: 14px;
-    //   }
-
-
-    // }
+  
 
     @media #{$media-1300} {
       gap: 15px;

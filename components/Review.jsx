@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import reviewStyle from "@/styles/components/review.module.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,19 +12,11 @@ import { useTranslation } from "react-i18next";
 
 const Review = () => {
   const { i18n, t } = useTranslation("common");
-  const swiperRef = useRef(null);
   const [direction, setDirection] = useState("ltr");
 
   useEffect(() => {
     const newDirection = i18n.language === "ar" ? "rtl" : "ltr";
     setDirection(newDirection);
-
-    if (swiperRef.current) {
-      setTimeout(() => {
-        swiperRef.current.rtlTranslate = newDirection === "rtl";
-        swiperRef.current.update();
-      }, 300);
-    }
   }, [i18n.language]);
 
   const reviewers = [
@@ -103,7 +95,7 @@ const Review = () => {
   return (
     <div className={reviewStyle.container}>
       <div className={reviewStyle.header_container}>
-        <h2>{t("reviews.main_heading")}</h2>
+        <h2 className="section_heading" >{t("reviews.main_heading")}</h2>
       </div>
 
       <Swiper
@@ -115,8 +107,9 @@ const Review = () => {
         }}
         dir={direction}
         loop={true}
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
+        navigation={{
+          nextEl: ".custom-next",
+          prevEl: ".custom-prev",
         }}
         modules={[Navigation, Autoplay]}
         breakpoints={{
@@ -156,16 +149,14 @@ const Review = () => {
         }`}
       >
         <button
-          className={`${reviewStyle.swiper_button_right}`}
-          onClick={() => swiperRef.current?.slidePrev()}
+          className={`${reviewStyle.swiper_button_right} custom-prev`}
         >
           <div className="">
             <img src="/arrow_big.svg" />
           </div>
         </button>
         <button
-          className={reviewStyle.swiper_button_left}
-          onClick={() => swiperRef.current?.slideNext()}
+          className={`${reviewStyle.swiper_button_left} custom-next`}
         >
           <div className="">
             <img src="/arrow_big.svg" />

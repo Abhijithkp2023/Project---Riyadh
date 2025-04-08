@@ -7,155 +7,179 @@
   position: relative;
   z-index: 1;
 
-  @media #{$media-768} {
-    background-color: #f1dfd3 !important;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: var(--bg-img);
+    z-index: -1;
+    transition: opacity 0.5s ease, background-image 0.5s ease;
+
+    @media #{$media-768} {
+      background-image: none;
+      background-color: #f1dfd3;
+    }
   }
 
+ 
 
-   
+  .sub_container {
+    @include wrapper;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 100px;
 
-    .sub_container {
-      @include wrapper;
+    @media #{$media-1600} {
+      padding: 0 5%;
+    }
+
+    @media #{$media-820} {
+      gap: 50px;
+    }
+
+    .learn_top {
       width: 100%;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
-      gap: 100px;
-      
-      @media #{$media-1600} {
-        padding: 0 5%;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      z-index: 10;
+    }
+
+    .learn_bottom {
+      width: 100%;
+      min-height: 262px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      gap: 30px;
+      margin-bottom: 130px;
+      z-index: 10;
+
+      @media #{$media-1024} {
+        gap: 20px;
       }
 
       @media #{$media-820} {
-        gap: 50px;
-      }
-
-      .learn_top {
-        width: 100%;
+        gap: 15px;
+        margin-bottom: 0px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-
-        h2 {
-          font-size: var(--font-size-heading);
-          font-weight: var(--font-weight-heading);
-          line-height: var(--line-height-heading);
-        }
+        gap: 40px;
       }
 
-      .learn_bottom {
+      & .junior,
+      & .ladies,
+      & .men {
+        height: 100%;
         width: 100%;
-        min-height: 262px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        gap: 30px;
-        margin-bottom: 130px;
+        background: rgba($color: #ffffff, $alpha: 0.4);
+        border: 1px solid white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        border-radius: 15px;
+        position: relative;
+        padding: 40px 20px 30px 20px;
+        transition: all 0.3s ease;
 
         @media #{$media-1024} {
           gap: 20px;
         }
-        
-        @media #{$media-820} {
-          gap: 15px;
-          margin-bottom: 0px;
-          display: flex;
-          flex-direction: column;
-          gap: 40px;
+
+        h3 {
+          font-size: 2.5rem;
+          font-weight: 700;
+          line-height: 112%;
+          color: #805e59;
         }
 
-        & .junior,
-        & .ladies,
-        & .men {
-          height: 100%;
-          width: 100%;
-          background: rgba($color: #ffffff, $alpha: 0.4);
-          border: 1px solid white;
-          text-align: center;
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+          max-width: 409px;
+
+          @media #{$media-1600} {
+            font-size: 14px;
+            line-height: 23px;
+          }
+        }
+
+        & > div {
+          position: absolute;
+          height: 58px;
+          width: 58px;
+          background: #f1dfd3;
+          border-radius: 300px;
           display: flex;
-          flex-direction: column;
           justify-content: center;
           align-items: center;
-          gap: 25px;
-          border-radius: 15px;
-          position: relative;
-          padding: 40px 20px 30px 20px;
-          transition: all 0.3s ease;
+          top: -24px;
+          overflow: hidden;
 
-          @media #{$media-1024} {
-            gap: 20px;
+          @media #{$media-768} {
+            height: 48px;
+            width: 48px;
           }
+
+          img {
+            scale: 1.4;
+          }
+        }
+
+        &:hover {
+          background: #805e59;
+          color: white;
 
           h3 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 112%;
-            color: #805e59;
-            transition: color 0.3s ease;
-          }
-
-          p {
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 26px;
-            max-width: 409px;
-            transition: color 0.3s ease;
-
-            @media #{$media-1600} {
-              font-size: 14px;
-              line-height: 23px;
-            }
-          }
-
-          & > div {
-            position: absolute;
-            height: 58px;
-            width: 58px;
-            background: #f1dfd3;
-            border-radius: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            top: -24px;
-            overflow: hidden;
-
-            @media #{$media-768} {
-              height: 48px;
-              width: 48px;
-            }
-
-            img {
-              scale: 1.4;
-            }
-          }
-
-          &:hover {
-            background: #805e59;
             color: white;
-
-            h3 {
-              color: white;
-            }
           }
-        }
-      }
-
-      .button_bottom {
-        display: none;
-
-        @media #{$media-820} {
-          display: flex;
-          align-self: center;
-        }
-      }
-
-      .button_top {
-        @media #{$media-820} {
-          display: none;
         }
       }
     }
+
+    .button_bottom {
+      display: none;
+
+      @media #{$media-820} {
+        display: flex;
+        align-self: center;
+      }
+    }
+
+    .button_top {
+      @media #{$media-820} {
+        display: none;
+      }
+    }
+  }
+  // }
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(#f5ede6, 0.8);
+  pointer-events: none;
+
+  &.overlayActive {
+    background: rgba(#f5ede6, 0.3);
+  }
+
+  // @media #{$media-768} {
+  //   opacity: 1;
   // }
 }
