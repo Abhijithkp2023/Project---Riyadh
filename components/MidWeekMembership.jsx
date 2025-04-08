@@ -32,9 +32,8 @@ const MidWeekMembership = () => {
   ];
 
   return (
-    <div style={{ width: "100vw", background: "#F5EDE6", marginBottom: "2px" }}>
+    <div style={{ width: "100vw", background: "#F5EDE6", marginBottom: "2px" }} className="pb_100 pt_100">
       <div
-        style={{ paddingTop: "80px", paddingBottom: "130px" }}
         className="wrapper"
       >
         <h3 className="section_header" data-aos="fade-up">

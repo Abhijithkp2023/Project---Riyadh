@@ -86,10 +86,61 @@
     "cookies_settings": "Cookies Settings"
   },
 
-  
   "aboutMembership": {
     "heading": "Membership options designed to meet your every need with exceptional value",
     "para": "Discover the unparalleled experience at Riyadh Golf Club with our diverse membership options, designed to meet your every need and offering exceptional value. Whether you want to play unlimited golf daily, enjoy our brand-new golf carts, or host social gatherings in our clubhouse, there is no place like our Golf Club in Riyadh. Our memberships range from Social and Academy categories to comprehensive golf-inclusive options, including exclusive corporate memberships. Plus, as a member, you'll enjoy access to our luxurious spa and state-of-the-art gym facilities. Additionally, Saudis receive a 50% discount on Midweek Memberships and a 25% discount on Premium Memberships. Join us and elevate your golfing lifestyle today!",
     "btn_text": "Get in Touch"
-  }
+  },
+
+  "night_golf" : {
+    "heading" : "Night Golf",
+    "para" : "Experience golf like never before with Night Golf! Play all 18 holes, fully lit up, and enjoy the thrill of the game under the stars. Open every night from 7 PM, our course offers a unique way to  unwind and challenge yourself after dark. Grab your clubs and tee off into the night – the perfect blend of sport and adventure awaits!",
+    "btn_text" : "Book Now"
+  },
+
+  "health_and_wellness" : {
+    "heading" : "Health and wellness",
+    "para" : "Our club offers an exceptional experience for its members, featuring diverse dining options, gym, and a luxurious locker room with a jacuzzi and shower area. Riyadh Golf Club is the perfect destination for enjoying time with family and friends."
+  },
+
+  "dining" : {
+    "heading" : "Dining",
+    "para" : "Enjoy a relaxed meal at our clubhouse dining area, where casual dining meets exceptional service. Open Tuesday to Thursday from 6 AM to 10 PM, our menu offers a variety of delightful options. For your convenience, our beverage cart is available from 6 AM to 6 PM. Come savor delicious food and refreshing drinks in a welcoming atmosphere."
+  },
+
+  "padel": {
+  "heading": "Padel",
+  "para": "Experience the excitement of Padel Tennis at our state-of-the-art courts! Perfect for up to four players, our courts are available for booking sessions.",
+  "sunday": "Sunday",
+  "monday": "Monday",
+  "time": "from 12 PM to 8 PM",
+  "60min": "60 Minutes",
+  "90min": "90 Minutes",
+  "120min": "120 Minutes",
+  "price_60": "175 SAR",
+  "price_90": "235 SAR",
+  "price_120": "295 SAR",
+  "book_button": "Contact us to Book"
+},
+"proshop" : {
+  "heading" : "Pro Shop",
+  "para" : "Pro shop offers a wide range of high-quality equipment and accessories to meet the needs of all players, from beginners to professionals. Whether you need clubs, equipment, accessories, or high-quality apparel from the Callaway brand, we have everything to help improve  your performance on the course. In addition, our professional club fitting services ensure optimal performance tailored to your needs. Visit us to experience top-quality gear and expert advice that will elevate your golf experience."
+},
+
+"exp_share" :{
+  "heading" : "Share and Get Inspired"
+},
+
+"membership_badge": {
+  "explore": "Explore our Memberships",
+  "premium_joint": "Premium Joint",
+  "premium": "Premium",
+  "midweek": "Midweek"
+}
+
+
+
+
+
+
 }

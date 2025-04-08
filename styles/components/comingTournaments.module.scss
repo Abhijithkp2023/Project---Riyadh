@@ -16,12 +16,17 @@
   position: relative;
   margin-top: 20px;
   overflow: hidden;
+  border-radius: 15px;
+
+   @media #{$media-600} {
+   height: 445px;
+  }
 
   img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: left;
   }
 }
 
@@ -42,12 +47,18 @@
   @media #{$media-1300} {
     width: calc(100% - 6%);
     padding: 0% 3% 0% 3%;
+    height: 98%;
+  }
+
+  @media #{$media-500} {
+    margin-left: 0;
   }
 }
 
 .logo_container {
-  width: 220px;
+  width: max(250px,30%);
   height: auto;
+  // background: yellow;
 
   img {
     display: block;
@@ -62,18 +73,26 @@
   flex-direction: column;
 
   h4 {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 500;
     line-height: 44px;
+
+    @media #{$media-600} {
+      line-height: 30px;
+    }
   }
 }
 
 .info_list {
   display: flex;
   margin: 20px 0px;
-//   flex-wrap: wrap;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+
+  @media #{$media-1300} {
+    margin: 10px 0px;
+  }
 
   li {
     display: flex;
@@ -92,6 +111,11 @@
       font-size: 16px;
       font-weight: 350;
       line-height: 55px;
+
+      @media #{$media-1600} {
+        font-size: 14px;
+        line-height: 40px;
+      }
     }
   }
 }

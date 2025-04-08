@@ -15,18 +15,18 @@ const membershipData = [
   },
   {
     imgSrc: "/joint_2.png",
-    title: "Joint Family Premium",
-    price: "36,495 SAR",
+    title: "Joint Couple Premium",
+    price: "33,495 SAR",
   },
   {
     imgSrc: "/joint_3.png",
     title: "Joint Family Premium",
-    price: "36,495 SAR",
+    price: "25,245 SAR",
   },
   {
     imgSrc: "/joint_4.png",
-    title: "Joint Family Premium",
-    price: "36,495 SAR",
+    title: "Corporate Joint Premium",
+    price: "46,408 SAR",
   },
 ];
 
@@ -34,8 +34,8 @@ const JointMembership = () => {
   return (
     <div style={{ width: "100vw", background: "#F5EDE6" }}>
       <div
-        style={{ paddingTop: "80px", paddingBottom: "130px" }}
-        className="wrapper"
+       
+        className="wrapper pb_100 pt_100"
       >
         <h3 className="section_header" data-aos="fade-up">
           Joint Premium Memberships
@@ -44,8 +44,8 @@ const JointMembership = () => {
         <Swiper
           slidesPerView={1}
           breakpoints={{
-            580: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            480: { slidesPerView: 2 },
+            820: { slidesPerView: 3 },
             1300: { slidesPerView: 4 },
           }}
           spaceBetween={50}
@@ -54,7 +54,7 @@ const JointMembership = () => {
           pagination={{ clickable: true }}
         >
           {membershipData.map((membership, index) => (
-            <SwiperSlide key={index} className="slider" data-aos="fade-up">
+            <SwiperSlide key={index} className="slider" >
               <Link href="#">
                 <img src={membership.imgSrc} alt="" className="img_cover " />
                 <div className="text_container">

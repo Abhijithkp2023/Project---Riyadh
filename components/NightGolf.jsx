@@ -1,22 +1,18 @@
 import React from "react";
 import style from "@/styles/components/nightGolf.module.scss";
+import { useTranslation } from "react-i18next";
 
 const NightGolf = () => {
+  const { t } = useTranslation("common");
+
   return (
     <div className={`${style.container} pb_100 pt_100`}>
       <div className={style.wrapper}>
         <div className={style.text_container}>
-          <h2>Night Golf</h2>
-          <p>
-            Experience golf like never before with Night Golf! Play all 18
-            holes, fully lit up, and enjoy the thrill of the game under the
-            stars. Open every night from 7 PM, our course offers a unique way to
-            unwind and challenge yourself after dark. Grab your clubs and tee
-            off into the night – the perfect blend of sport and adventure
-            awaits!
-          </p>
+          <h2>{t("night_golf.heading")}</h2>
+          <p className="para">{t("night_golf.para")}</p>
           <button className="dark_button" data-aos="fade-up">
-            <p>Book to Play</p>
+            <p>{t("night_golf.btn_text")}</p>
             <div className="button_round">
               <svg
                 width="11"
@@ -39,7 +35,7 @@ const NightGolf = () => {
         </div>
 
         <div className={style.image_container}>
-            <img src="/night_golf.png" alt="" />
+          <img src="/night_golf.png" alt="" />
         </div>
       </div>
     </div>

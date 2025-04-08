@@ -3,16 +3,10 @@
 
 .conatiner {
   width: 100vw;
-
-  .wrapper {
-    @include wrapper;
-  }
 }
 
 .image_container {
-  max-width: 1600px;
-  margin: 0 auto;
-  overflow: hidden;
+  @include wrapper;
   display: grid;
   gap: 15px;
   grid-template-areas:
@@ -20,6 +14,23 @@
     "image_5 image_5 image_6 image_4"
     "image_7 image_8 image_9 image_10"
     "image_11 image_8 image_12 image_12";
+
+  @media #{$media-1200} {
+    gap: 12px; 
+  }
+
+  @media #{$media-820} {
+    gap: 10px;
+    grid-template-areas:
+      "image_1 image_2"
+      "image_5 image_5"
+      "image_3 image_4"
+      "image_6 image_4"
+      "image_7 image_8 "
+      "image_11 image_8   "
+      "image_9 image_10"
+      "image_12 image_12";
+  }
 
   li {
     overflow: hidden;

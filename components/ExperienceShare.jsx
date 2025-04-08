@@ -1,8 +1,11 @@
 import React from "react";
 import style from "@/styles/components/experienceShare.module.scss";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const ExperienceShare = () => {
+  const { t } = useTranslation("common");
+
   const posts = [
     {
       image: "/share_1.png",
@@ -57,8 +60,10 @@ const ExperienceShare = () => {
   return (
     <div className={`${style.container} pb_100 pt_60`}>
       <div className={style.wrapper}>
-        <div><img src="/instagram.svg" alt="" /></div>
-        <h2 className="section_heading">Share and Get Inspired</h2>
+        <div className={style.icon}>
+          <img src="/instagram.svg" alt="" />
+        </div>
+        <h2 className="section_heading">{t("exp_share.heading")}</h2>
         <ul className={style.list}>
           {posts.map((item, index) => (
             <li key={index}>

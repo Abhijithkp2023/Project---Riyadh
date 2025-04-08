@@ -30,7 +30,7 @@ const PremiumMembership = () => {
   ];
 
   return (
-    <div className={style.container}>
+    <div className={`${style.container} pb_100 pt_100`} >
       <div className={style.wrapper}>
         <h3 className="section_header" data-aos="fade-up">
           Premium Memberships
@@ -48,7 +48,7 @@ const PremiumMembership = () => {
           pagination={{ clickable: true }}
         >
           {membershipData.map((membership, index) => (
-            <SwiperSlide key={index} className="slider" data-aos="fade-up">
+            <SwiperSlide key={index} className="slider" >
               <Link href="#">
                 <img src={membership.imgSrc} alt="" className="img_cover" />
                 <div className="text_container">

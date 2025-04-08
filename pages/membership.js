@@ -6,8 +6,10 @@ import MembershipBadge from "@/components/MembershipBadge";
 import JointMembership from "@/components/JointMembership";
 import PremiumMembership from "@/components/PremiumMembership";
 import MidWeekMembership from "@/components/MidWeekMembership";
+import { useTranslation } from "react-i18next";
 
 const Membership = () => {
+  const { t } = useTranslation("common");
   const aboutMembership = {
     heading: "aboutMembership.heading",
     para: "aboutMembership.para",
@@ -21,7 +23,10 @@ const Membership = () => {
         <meta name="description" content="Membership page" />
       </Head>
 
-      <HeroBanner imageUrl="/membership_hero_bg.png" title="Memberships" />
+      <HeroBanner
+        imageUrl="/membership_hero_bg.png"
+        title={t("nav.membership")}
+      />
       <About content={aboutMembership} />
       <MembershipBadge />
       <JointMembership />

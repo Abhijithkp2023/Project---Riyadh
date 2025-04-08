@@ -9,12 +9,18 @@
   .wrapper {
     @include wrapper;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     color: white;
     overflow: hidden;
+    gap: 20px;
 
 
+    @media #{$media-700} {
+      justify-content: center;
+    }
+    
 
     h3 {
         font-weight: 700;
@@ -26,8 +32,14 @@
 
 .list {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
+
+
+  @media #{$media-700} {
+    justify-content: center;
+  }
 
   li {
     position: relative;
@@ -42,6 +54,12 @@
     border: 1px solid #F5EDE6;
     border-radius: 30px;
     text-align: center;
+
+
+    @media #{$media-700} {
+      padding: 10px 20px;
+      min-width: 130px;
+    }
 
    
     a {

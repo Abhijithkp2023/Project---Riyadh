@@ -8,8 +8,10 @@ import Proshop from "@/components/Proshop";
 import Review from "@/components/Review";
 import Head from "next/head";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const experience = () => {
+  const { t } = useTranslation("common");
   return (
     <>
       <Head>
@@ -17,10 +19,7 @@ const experience = () => {
         <meta name="description" content="Experience page" />
       </Head>
 
-      <HeroBanner
-        imageUrl="/experience_hero_bg.png"
-        title="Experience Our Activities"
-      />
+      <HeroBanner imageUrl="/experience_hero_bg.png" title={t("nav.exp")} />
       <NightGolf />
       <HealthAndWellness />
       <Dining />

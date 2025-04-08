@@ -90,7 +90,7 @@ const Contact = () => {
 
         <div className={style.contact_bottom}>
           <h2 className="section_heading">Together we build trust</h2>
-          <p>
+          <p className="para">
             Use the below contact info to speak up form to share any suggestions
             or concerns to help us maintain a positive and transparent workplace
           </p>

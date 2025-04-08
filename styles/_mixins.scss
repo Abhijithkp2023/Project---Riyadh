@@ -8,7 +8,7 @@
 @mixin wrapper {
     max-width: calc(1600px + 6%);
     margin: 0 auto;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     padding-left: 3%;
     padding-right: 3%;
 }

@@ -16,6 +16,11 @@
   li {
     height: 100%;
     padding: 40px;
+
+
+    @media #{$media-500} {
+      padding: 20px;
+    }
   }
 
   li.active {

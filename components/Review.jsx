@@ -33,70 +33,70 @@ const Review = () => {
       reviewKey: "review_1",
       name: "Michael P.",
       titleKey: "professional",
-      image: "./reviewer_1.png",
+      image: "/reviewer_1.png",
     },
     {
       id: 2,
       reviewKey: "review_2",
       name: "David H.",
       titleKey: "enthusiast",
-      image: "./reviewer_2.png",
+      image: "/reviewer_2.png",
     },
     {
       id: 3,
       reviewKey: "review_3",
       name: "Sarah L.",
       titleKey: "amateur",
-      image: "./reviewer_3.png",
+      image: "/reviewer_3.png",
     },
     {
       id: 4,
       reviewKey: "review_1",
       name: "David H.",
       titleKey: "enthusiast",
-      image: "./reviewer_4.png",
+      image: "/reviewer_4.png",
     },
     {
       id: 5,
       reviewKey: "review_2",
       name: "Michael P.",
       titleKey: "professional",
-      image: "./reviewer_1.png",
+      image: "/reviewer_1.png",
     },
     {
       id: 6,
       reviewKey: "review_1",
       name: "Michael P.",
       titleKey: "professional",
-      image: "./reviewer_1.png",
+      image: "/reviewer_1.png",
     },
     {
       id: 7,
       reviewKey: "review_3",
       name: "Sarah L.",
       titleKey: "amateur",
-      image: "./reviewer_3.png",
+      image: "/reviewer_3.png",
     },
     {
       id: 8,
       reviewKey: "review_2",
       name: "David H.",
       titleKey: "enthusiast",
-      image: "./reviewer_2.png",
+      image: "/reviewer_2.png",
     },
     {
       id: 9,
       reviewKey: "review_3",
       name: "Sarah L.",
       titleKey: "amateur",
-      image: "./reviewer_3.png",
+      image: "/reviewer_3.png",
     },
     {
       id: 10,
       reviewKey: "review_3",
       name: "Sarah L.",
       titleKey: "amateur",
-      image: "./reviewer_3.png",
+      image: "/reviewer_3.png",
     },
   ];
 
@@ -134,7 +134,7 @@ const Review = () => {
                 direction === "rtl" ? reviewStyle.rtl : ""
               }`}
             >
-              <img src="./quote.svg" alt="quote" />
+              <img src="/quote.svg" alt="quote" />
             </div>
             <p>{t(`reviews.${review.reviewKey}`)}</p>
             <div className={reviewStyle.reviewer_info}>
@@ -160,7 +160,7 @@ const Review = () => {
           onClick={() => swiperRef.current?.slidePrev()}
         >
           <div className="">
-            <img src="./arrow_big.svg" />
+            <img src="/arrow_big.svg" />
           </div>
         </button>
         <button
@@ -168,7 +168,7 @@ const Review = () => {
           onClick={() => swiperRef.current?.slideNext()}
         >
           <div className="">
-            <img src="./arrow_big.svg" />
+            <img src="/arrow_big.svg" />
           </div>
         </button>
       </div>

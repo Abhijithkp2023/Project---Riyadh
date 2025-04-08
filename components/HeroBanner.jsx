@@ -4,14 +4,13 @@ const HeroBanner = ({ imageUrl, title }) => {
   return (
     <div
       style={{
-        position: "relative",
-        height: "768px",
-        width: "100vw",
         backgroundImage: `url(${imageUrl})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
+
+      className="hero_bg"
     >
       {title && (
         <h2

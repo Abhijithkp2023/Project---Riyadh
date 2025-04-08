@@ -11,13 +11,19 @@ const MediaList = () => {
     <div className={style.container}>
       <ul className={style.list_container}>
         <li className={currentRoute === "/news" ? style.active : ""}>
-          <Link href="/news">News</Link>
+          <Link href="/news">
+            <p className="para">News</p>
+          </Link>
         </li>
         <li className={currentRoute === "/gallery" ? style.active : ""}>
-          <Link href="/gallery">Gallery</Link>
+          <Link href="/gallery">
+            <p className="para">Gallery</p>
+          </Link>
         </li>
         <li className={currentRoute === "/tournaments" ? style.active : ""}>
-          <Link href="/tournaments">Tournaments</Link>
+          <Link href="/tournaments">
+            <p className="para">Tournaments</p>
+          </Link>
         </li>
       </ul>
     </div>
