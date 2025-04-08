@@ -42,6 +42,10 @@
       gap: 50px;
     }
 
+    @media #{$media-600} {
+      gap: 40px;
+    }
+
     .learn_top {
       width: 100%;
       display: flex;
@@ -172,7 +176,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(#f5ede6, 0.8);
+  background: rgba(#F5EDE6CC, 0.8);
   pointer-events: none;
 
   &.overlayActive {

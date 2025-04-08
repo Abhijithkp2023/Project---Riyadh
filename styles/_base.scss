@@ -1002,8 +1002,12 @@
 .pb_180 {
   padding-bottom: 180px;
 
-  @media #{$media-820} {
-    padding-bottom: 90px;
+  @media #{$media-1024} {
+    padding-bottom: 80px;
+  }
+
+  @media #{$media-600} {
+    padding-bottom: 51px;
   }
 }
 
@@ -1011,7 +1015,7 @@
   padding-top: 180px;
 
   @media #{$media-1024} {
-    padding-top: 110px;
+    padding-top: 80px;
   }
 
   @media #{$media-600} {
@@ -1585,7 +1589,7 @@
   }
 
   @media #{$media-600} {
-    margin-bottom: 65px;
+    margin-bottom: 40px;
   }
 }
 
@@ -1593,7 +1597,7 @@
   margin-top: 135px;
 
   @media #{$media-600} {
-    margin-top: 67px;
+    margin-top: 40px;
   }
 }
 

@@ -1,5 +1,5 @@
-@import "../_variables.scss" ;
-@import "../_mixins.scss" ;
+@import "../_variables.scss";
+@import "../_mixins.scss";
 
 .events_container {
   height: 100vh;
@@ -12,8 +12,6 @@
     height: auto;
     padding: 60px 0px;
   }
-
-
 
   &::before,
   &::after {
@@ -29,8 +27,8 @@
     left: 0;
     width: 110px;
     height: 100%;
-    background-image: url('/about_decor_left.png');
-    
+    background-image: url("/about_decor_left.png");
+
     @media #{$media-700} {
       display: none;
     }
@@ -40,13 +38,12 @@
     right: 0;
     width: 55px;
     height: 902px;
-    background-image: url('/about_decor_right.png');
+    background-image: url("/about_decor_right.png");
 
     @media #{$media-700} {
       width: 30px;
     }
   }
-
 
   & > div {
     @include wrapper;
@@ -58,10 +55,8 @@
     height: 100%;
     overflow: hidden;
     margin: 0 auto;
-   
 
-
-    @media #{$media-1600}{
+    @media #{$media-1600} {
       padding: 0% 5% 0% 5%;
     }
 
@@ -75,28 +70,7 @@
 
       @media #{$media-820} {
         width: 100%;
-       }
-
-      h2 {
-        font-size: var(--font-size-heading);
-        font-weight: var(--font-weight-heading);
-        line-height: var(--line-height-heading);
       }
-
-      p  {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 26px;
-
-        @media #{$media-1600} {
-          font-size: 14px;
-          line-height: 23px;
-        }
-
-      }
-
     }
-
-   
   }
 }

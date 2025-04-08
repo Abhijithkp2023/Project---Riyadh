@@ -3,11 +3,17 @@
 
 .container {
   padding-top: 80px;
-  height: 789px;
+  height: 689px;
   width: 100%;
   background: white;
   position: relative;
   overflow: hidden;
+
+  @media #{$media-768} {
+    padding-top: 40px;
+    height: auto;
+    padding-bottom: 50px;
+  }
 
   &::before,
   &::after {
@@ -42,10 +48,6 @@
     }
   }
 
-  @media #{$media-600} {
-    height: 689px;
-  }
-
   .header_container {
     @include wrapper;
     z-index: 3;
@@ -55,7 +57,7 @@
       // padding-left: calc((100vw - 1600px) / 2);
     
       // line-height: var(--line-height-heading);
-      z-index: 0;
+      z-index: 10;
     }
   }
 
@@ -63,7 +65,7 @@
     z-index: 95;
 
     .slides {
-      margin-top: 50px;
+      margin-top: 30px;
       background: #f5ede6;
       padding: 30px 40px;
       border-radius: 30px;
@@ -139,7 +141,7 @@
 
   .button_container {
     position: absolute;
-    top: 100px;
+    top: 90px;
     right: 200px;
     display: flex;
     gap: 40px;
@@ -228,6 +230,10 @@
       .swiper_button_left > div {
         transform: rotate(-45deg);
       }
+    }
+
+    @media #{$media-768} {
+      display: none;
     }
   }
 }

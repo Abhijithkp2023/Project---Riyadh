@@ -35,7 +35,7 @@ const Details = () => {
               <Link
                 href="#"
                 className="dark_button"
-                // data-aos="fade-up"
+                data-aos="fade-up"
               >
                 <label>{t("details.btn_text_course_tour")}</label>
                 <span>
@@ -53,7 +53,7 @@ const Details = () => {
               <Link
                 href="#"
                 className="transparent_button"
-                // data-aos="fade-up"
+                data-aos="fade-up"
               >
                 <label>{t("details.btn_text_view_details")}</label>
                 <span>

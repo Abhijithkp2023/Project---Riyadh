@@ -70,7 +70,7 @@ const Learn = () => {
           <Link
             href="#"
             className={`${LearnStyle.button_top} dark_button`}
-            // data-aos="fade-up"
+            data-aos="fade-up"
           >
             <label>{t("learn.read_more_btn")}</label>
             <span>

@@ -5,7 +5,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  // font-family: Adelle Sans, sans-serif;
 }
 
 @font-face {
@@ -55,7 +54,6 @@ html {
   overflow-x: hidden;
 }
 
-/* Force inheritance for all interactive elements */
 button,
 input,
 select,
@@ -111,11 +109,9 @@ html {
 
 @media (max-width: 700px) {
   html {
-    font-size: 45%;
+    font-size: 55%;
   }
 }
-
-
 
 ul,
 ol {
@@ -146,21 +142,13 @@ a {
   }
 
   @media #{$media-1200} {
-    line-height: 22px;
+    line-height: 24px;
   }
 
-  // @media (min-width: 1200px), (min-width: 960px) and (-webkit-device-pixel-ratio: 1.5625) {
-  //   font-size: 14px;
-  // }
-
-
-  //  @media (min-width: 1200px), (min-width: 960px) and (-webkit-device-pixel-ratio: 1.5625) {
-  //   font-size: 14px;
-  // }
-  
+  @media (min-width: 1200px) and (-webkit-device-pixel-ratio: 1.5) {
+    font-size: 12px;
+  }
 }
-
-
 
 [dir="rtl"] .dark_button div.button_round svg,
 [dir="rtl"] .light_button div.button_round svg,
@@ -418,7 +406,7 @@ a {
   width: 100vw;
 
   @media #{$media-820} {
-    height: 568px;
+    height: 468px;
   }
 }
 

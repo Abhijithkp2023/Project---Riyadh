@@ -95,7 +95,9 @@ const Review = () => {
   return (
     <div className={reviewStyle.container}>
       <div className={reviewStyle.header_container}>
-        <h2 className="section_heading" >{t("reviews.main_heading")}</h2>
+        <h2 className="section_heading" data-aos="fade-up">
+          {t("reviews.main_heading")}
+        </h2>
       </div>
 
       <Swiper
@@ -119,6 +121,7 @@ const Review = () => {
         }}
         className={reviewStyle.slide_container}
         speed={200}
+        data-aos="fade-up"
       >
         {reviewers.map((review) => (
           <SwiperSlide key={review.id} className={reviewStyle.slides}>
@@ -148,16 +151,12 @@ const Review = () => {
           direction === "rtl" ? reviewStyle.rtl : ""
         }`}
       >
-        <button
-          className={`${reviewStyle.swiper_button_right} custom-prev`}
-        >
+        <button className={`${reviewStyle.swiper_button_right} custom-prev`}>
           <div className="">
             <img src="/arrow_big.svg" />
           </div>
         </button>
-        <button
-          className={`${reviewStyle.swiper_button_left} custom-next`}
-        >
+        <button className={`${reviewStyle.swiper_button_left} custom-next`}>
           <div className="">
             <img src="/arrow_big.svg" />
           </div>

@@ -22,12 +22,12 @@ const Events = () => {
     <div className={`${eventsStyle.events_container}`}>
       <div className={eventsStyle.event_sub_container}>
         <div className={eventsStyle.event_text_container}>
-          <h2 data-aos="fade-up">{t("event.event_heading")}</h2>
-          <p data-aos="fade-up">{t("event.event_para")}</p>
+          <h2 data-aos="fade-up" className="section_heading">{t("event.event_heading")}</h2>
+          <p data-aos="fade-up" className="para">{t("event.event_para")}</p>
           <Link
             href="#"
             className="dark_button"
-            // data-aos="fade-up"
+            data-aos="fade-up"
           >
             <label>{t("event.read_more_btn")}</label>
             <span>
